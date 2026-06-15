@@ -17,18 +17,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  burger?.addEventListener('click', () => {
+  function openMobileNav() {
     mobileNav?.classList.add('open');
     document.body.style.overflow = 'hidden';
-  });
+  }
 
   function closeMobileNav() {
     mobileNav?.classList.remove('open');
     document.body.style.overflow = '';
   }
 
+  // Sonne togglet das Menü (öffnen UND schliessen)
+  burger?.addEventListener('click', () => {
+    if (mobileNav?.classList.contains('open')) {
+      closeMobileNav();
+    } else {
+      openMobileNav();
+    }
+  });
+
   mobileClose?.addEventListener('click', closeMobileNav);
   mobileNav?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileNav));
+
+  // ESC-Taste schliesst das Menü
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMobileNav();
+  });
+
+  // Klick auf den leeren Bereich des Menüs schliesst es
+  mobileNav?.addEventListener('click', (e) => {
+    if (e.target === mobileNav) closeMobileNav();
+  });
 
   // ── Slot-Machine Headline ────────────────────────────────
   const reel = document.querySelector('.js-slot-reel');
