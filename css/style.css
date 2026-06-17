@@ -1599,3 +1599,20 @@ section { padding: var(--space-xl) 0; }
 .intro-split__visual:hover .img-placeholder__label,
 .group-card:hover .img-placeholder__label,
 .about-teaser__image-wrap:hover .img-placeholder__label { opacity: 1; }
+
+
+/* ── Bild auf volle Spaltenhöhe (Über mich) ──────────────── */
+.intro-split--stretch { align-items: stretch; }
+.intro-split--stretch .intro-split__visual { display: flex; }
+.img-placeholder--fill {
+  width: 100%;
+  min-height: 100%;
+  border-radius: var(--radius-md);
+}
+.img-placeholder--fill::before { content: none; }  /* festes Seitenverhältnis aufheben */
+@media (max-width: 900px) {
+  /* Auf Mobil wieder normales Verhältnis, sonst wird das Bild zu hoch */
+  .intro-split--stretch { align-items: center; }
+  .img-placeholder--fill { min-height: 0; }
+  .img-placeholder--fill::before { content: ''; display: block; padding-top: 110%; }
+}
