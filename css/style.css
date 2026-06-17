@@ -268,7 +268,7 @@ p { font-size: 1rem; color: var(--text-mid); max-width: 66ch; }
   background: var(--petrol-deep);
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   position: relative;
   overflow: hidden;
   padding: var(--space-2xl) 0 var(--space-xl);
@@ -300,7 +300,7 @@ p { font-size: 1rem; color: var(--text-mid); max-width: 66ch; }
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--sand);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -314,7 +314,7 @@ p { font-size: 1rem; color: var(--text-mid); max-width: 66ch; }
 }
 
 /* ── Slot-Machine Headline ───────────────────────────────── */
-.hero__headline { margin-bottom: var(--space-md); }
+.hero__headline { margin-top: 0.5rem; margin-bottom: var(--space-md); }
 
 .hero__slot {
   font-family: var(--font-display);
@@ -1445,4 +1445,126 @@ section { padding: var(--space-xl) 0; }
 .goals-grid span:hover {
   background: var(--copper);
   border-color: var(--copper);
+}
+
+
+/* ── Zwei Wege (Tiles) ───────────────────────────────────── */
+.two-paths {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+@media (max-width: 760px) { .two-paths { grid-template-columns: 1fr; } }
+
+.path-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: var(--sand-warm);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  transition: all var(--transition);
+}
+.path-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(28,58,58,0.1);
+  border-color: var(--petrol-light);
+}
+.path-tile__label {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--copper);
+}
+.path-tile__title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--petrol-deep);
+}
+.path-tile__text {
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  line-height: 1.6;
+  flex: 1;
+}
+.path-tile__arrow {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--copper);
+  margin-top: 0.5rem;
+  transition: gap var(--transition);
+}
+
+/* Sprung-Anker nicht unter der fixen Navigation verstecken */
+#der-weg, [id="maennerkreis"] { scroll-margin-top: 90px; }
+
+
+/* ── Über mich: Zitat ────────────────────────────────────── */
+.ueber-quote {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--petrol-deep);
+  line-height: 1.4;
+  padding: 1rem 0 1rem 1.25rem;
+  border-left: 3px solid var(--copper);
+  margin-bottom: 1.5rem;
+}
+.ueber-quote cite {
+  display: block;
+  font-size: 0.85rem;
+  font-style: normal;
+  font-weight: 600;
+  color: var(--copper);
+  margin-top: 0.5rem;
+}
+
+/* ── Über mich: Werdegang ────────────────────────────────── */
+.cv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+}
+@media (max-width: 760px) { .cv-grid { grid-template-columns: 1fr; gap: var(--space-lg); } }
+
+.cv-col__title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--petrol-deep);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.cv-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.cv-list li {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 0.75rem;
+  align-items: start;
+}
+.cv-year {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--copper);
+  padding-top: 0.1rem;
+}
+.cv-text {
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  line-height: 1.5;
+}
+@media (max-width: 420px) {
+  .cv-list li { grid-template-columns: 1fr; gap: 0.15rem; }
 }
