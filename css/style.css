@@ -1612,7 +1612,8 @@ section { padding: var(--space-xl) 0; }
 .img-placeholder--fill::before { content: none; }  /* festes Seitenverhältnis aufheben */
 @media (max-width: 900px) {
   /* Auf Mobil wieder normales Verhältnis, sonst wird das Bild zu hoch */
-  .intro-split--stretch { align-items: center; }
-  .img-placeholder--fill { min-height: 0; }
-  .img-placeholder--fill::before { content: ''; display: block; padding-top: 110%; }
+  .intro-split--stretch { align-items: stretch; }
+  .intro-split--stretch .intro-split__visual { display: block; width: 100%; }
+  .img-placeholder--fill { min-height: 0; width: 100%; position: relative; }
+  .img-placeholder--fill::before { content: ''; display: block; padding-top: 85%; }
 }
