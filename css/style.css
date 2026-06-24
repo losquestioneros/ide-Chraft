@@ -17,6 +17,7 @@
   --sand-warm:      #F7F3EC;
   --sand-dark:      #D8CDBE;
   --copper:         #B5825A;
+  --copper-text:    #94633C;
   --copper-light:   #C99870;
   --white:          #FFFFFF;
   --off-white:      #FDFDFB;
@@ -189,6 +190,9 @@ p { font-size: 1rem; color: var(--text-mid); max-width: 66ch; }
 
 .nav__links a:hover::after { width: 100%; }
 .nav__links a:hover { color: var(--white); }
+/* Aktive Seite markieren */
+.nav__links a.nav__link--active::after { width: 100%; background: var(--copper-light); }
+.nav.scrolled .nav__links a.nav__link--active::after { background: var(--copper); }
 
 .nav.scrolled .nav__links a { color: var(--text-mid); }
 .nav.scrolled .nav__links a:hover { color: var(--petrol-deep); }
@@ -561,7 +565,7 @@ section { padding: var(--space-xl) 0; }
   font-family: var(--font-display);
   font-size: 0.85rem;
   font-weight: 700;
-  color: var(--copper);
+  color: var(--copper-text);
   display: flex;
   align-items: center;
   gap: 0.35rem;
@@ -646,7 +650,7 @@ section { padding: var(--space-xl) 0; }
 .offer-card__list li { display: flex; align-items: flex-start; gap: 0.5rem; }
 .offer-card__list li::before {
   content: '—';
-  color: var(--copper);
+  color: var(--copper-text);
   flex-shrink: 0;
 }
 
@@ -654,7 +658,7 @@ section { padding: var(--space-xl) 0; }
   font-family: var(--font-display);
   font-size: 0.85rem;
   font-weight: 700;
-  color: var(--copper);
+  color: var(--copper-text);
   display: flex;
   align-items: center;
   gap: 0.4rem;
@@ -785,7 +789,7 @@ section { padding: var(--space-xl) 0; }
   font-size: 4rem;
   font-weight: 700;
   line-height: 1;
-  color: var(--copper);
+  color: var(--copper-text);
   opacity: 0.3;
   position: absolute;
   top: 1rem; left: 1.5rem;
@@ -910,7 +914,11 @@ section { padding: var(--space-xl) 0; }
 
 .form-group input:focus,
 .form-group select:focus,
-.form-group textarea:focus { border-color: var(--petrol-mid); }
+.form-group textarea:focus {
+  border-color: var(--petrol-mid);
+  outline: 2px solid var(--copper);
+  outline-offset: 1px;
+}
 
 .form-group textarea { min-height: 120px; resize: vertical; }
 
@@ -1031,7 +1039,7 @@ section { padding: var(--space-xl) 0; }
   font-family: var(--font-display);
   font-size: 2.2rem;
   font-weight: 700;
-  color: var(--copper);
+  color: var(--copper-text);
   opacity: 0.4;
   line-height: 1;
   min-width: 2.8rem;
@@ -1101,7 +1109,7 @@ section { padding: var(--space-xl) 0; }
 .supervision-card__list li { display: flex; gap: 0.5rem; }
 .supervision-card__list li::before {
   content: '–';
-  color: var(--copper);
+  color: var(--copper-text);
   flex-shrink: 0;
 }
 
@@ -1146,10 +1154,15 @@ section { padding: var(--space-xl) 0; }
   .nav__logo-img img { width: 88px; }
   .footer__grid { grid-template-columns: 1fr; gap: var(--space-md); }
   .form-row { grid-template-columns: 1fr; }
-  .hero__actions { flex-direction: column; align-items: flex-start; }
+  .hero__actions { flex-direction: column; align-items: stretch; width: 100%; }
+  .hero__actions .btn { width: 100%; justify-content: center; }
   .cta-banner { padding: var(--space-md); }
+  .cta-banner__actions { flex-direction: column; align-items: stretch; }
+  .cta-banner__actions .btn { width: 100%; justify-content: center; }
   .supervision-banner { padding: var(--space-md); }
   .form { padding: 1.5rem; }
+  /* Touch-freundliche Footer-Links (min. 44px Tap-Höhe) */
+  .footer__col a { display: inline-block; padding: 0.35rem 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1222,7 +1235,7 @@ section { padding: var(--space-xl) 0; }
   font-family: var(--font-display);
   font-size: 2rem;
   font-weight: 700;
-  color: var(--copper);
+  color: var(--copper-text);
   opacity: 0.5;
   display: block;
   margin-bottom: 0.75rem;
@@ -1354,7 +1367,7 @@ section { padding: var(--space-xl) 0; }
 }
 .sabotage-cat li::before {
   content: '·';
-  color: var(--copper);
+  color: var(--copper-text);
   font-weight: 700;
   flex-shrink: 0;
 }
@@ -1381,7 +1394,7 @@ section { padding: var(--space-xl) 0; }
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--copper);
+  color: var(--copper-text);
   background: rgba(181,130,90,0.1);
   padding: 0.3rem 0.75rem;
   border-radius: 999px;
@@ -1413,7 +1426,7 @@ section { padding: var(--space-xl) 0; }
 }
 .phase-card__list li::before {
   content: '→';
-  color: var(--copper);
+  color: var(--copper-text);
   flex-shrink: 0;
 }
 
@@ -1477,7 +1490,7 @@ section { padding: var(--space-xl) 0; }
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--copper);
+  color: var(--copper-text);
 }
 .path-tile__title {
   font-family: var(--font-display);
@@ -1495,7 +1508,7 @@ section { padding: var(--space-xl) 0; }
   font-family: var(--font-display);
   font-size: 0.85rem;
   font-weight: 700;
-  color: var(--copper);
+  color: var(--copper-text);
   margin-top: 0.5rem;
   transition: gap var(--transition);
 }
@@ -1521,7 +1534,7 @@ section { padding: var(--space-xl) 0; }
   font-size: 0.85rem;
   font-style: normal;
   font-weight: 600;
-  color: var(--copper);
+  color: var(--copper-text);
   margin-top: 0.5rem;
 }
 
@@ -1557,7 +1570,7 @@ section { padding: var(--space-xl) 0; }
   font-family: var(--font-display);
   font-size: 0.82rem;
   font-weight: 700;
-  color: var(--copper);
+  color: var(--copper-text);
   padding-top: 0.1rem;
 }
 .cv-text {
@@ -1616,4 +1629,37 @@ section { padding: var(--space-xl) 0; }
   .intro-split--stretch .intro-split__visual { display: block; width: 100%; }
   .img-placeholder--fill { min-height: 0; width: 100%; position: relative; }
   .img-placeholder--fill::before { content: ''; display: block; padding-top: 85%; }
+}
+
+
+/* ── Barrierefreiheit: sichtbare Fokus-Zustände (WCAG-Fokus 2.4.7) ── */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.nav__burger:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--copper);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+/* Maus-Klick erzeugt keinen störenden Ring, Tastatur schon */
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible) { outline: none; }
+
+/* Skip-Link für Screenreader/Tastatur */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  z-index: 1000;
+  background: var(--petrol-deep);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0 0 8px 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-decoration: none;
+}
+.skip-link:focus {
+  left: 0;
 }
