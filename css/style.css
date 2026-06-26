@@ -1161,8 +1161,8 @@ section { padding: var(--space-xl) 0; }
   .cta-banner__actions .btn { width: 100%; justify-content: center; }
   .supervision-banner { padding: var(--space-md); }
   .form { padding: 1.5rem; }
-  /* Touch-freundliche Footer-Links (min. 44px Tap-Höhe) */
-  .footer__col a { display: inline-block; padding: 0.35rem 0; }
+  /* Touch-freundliche Footer-Links (min. 44px Tap-Höhe), untereinander */
+  .footer__col a { display: block; padding: 0.4rem 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
