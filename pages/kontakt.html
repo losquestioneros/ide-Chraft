@@ -22,7 +22,7 @@
       "name": "Was passiert im Erstgespräch?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Das Erstgespräch dient dem gegenseitigen Kennenlernen. Du erzählst von deinem Anliegen, ich erkläre meine Arbeitsweise – und wir schauen gemeinsam, ob eine Zusammenarbeit passt. Kein Druck."
+        "text": "Du erzählst, was dich beschäftigt, ich erkläre kurz, wie ich arbeite – und wir schauen, ob es passt."
       }
     },
     {
@@ -75,6 +75,7 @@
         <li><a href="maennerarbeit.html">Männerarbeit</a></li>
         <li><a href="jugend.html">Jugend&shy;begleitung</a></li>
         <li><a href="supervision.html">Supervision</a></li>
+        <li><a href="fragenkiosk.html">Fragenkiosk</a></li>
         <li><a href="ueber-mich.html">Über mich</a></li>
       </ul>
       <div class="nav__cta">
@@ -92,6 +93,7 @@
   <a href="maennerarbeit.html">Männerarbeit</a>
   <a href="jugend.html">Jugend&shy;begleitung</a>
   <a href="supervision.html">Supervision</a>
+  <a href="fragenkiosk.html">Fragenkiosk</a>
   <a href="ueber-mich.html">Über mich</a>
   <a href="kontakt.html">Kontakt</a>
 </div>
@@ -116,19 +118,7 @@
         <p class="eyebrow">Direkte Kontaktmöglichkeiten</p>
         <h2>So erreichst du mich</h2>
         <div class="divider"></div>
-        <p>Ob per Formular, Telefon oder E-Mail – ich freue mich auf deine Nachricht. Das kostenlose Erstgespräch findet per Telefon oder Video statt und dauert ca. 30 Minuten.</p>
-
-        <div class="contact-detail">
-          <div class="contact-detail__icon">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.62A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l.59-.59a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
-            </svg>
-          </div>
-          <div>
-            <strong style="display: block; font-size: 0.82rem; font-weight: 600; color: var(--text-dark); margin-bottom: 0.1rem;">Telefon</strong>
-            <span>+41 XX XXX XX XX</span>
-          </div>
-        </div>
+        <p>Du erreichst mich per Formular, Telefon oder E-Mail. Das kostenlose Erstgespräch dauert ca. 30 Minuten und findet telefonisch oder per Video statt.</p>
 
         <div class="contact-detail">
           <div class="contact-detail__icon">
@@ -139,7 +129,7 @@
           </div>
           <div>
             <strong style="display: block; font-size: 0.82rem; font-weight: 600; color: var(--text-dark); margin-bottom: 0.1rem;">E-Mail</strong>
-            <span>info@idechraft.ch</span>
+            <span>kontakt@idechraft.ch</span>
           </div>
         </div>
 
@@ -171,13 +161,14 @@
 
         <div style="margin-top: 2.5rem; padding: 1.5rem; background: var(--white); border-radius: var(--radius-md); border: 1px solid var(--border);">
           <p class="eyebrow" style="margin-bottom: 0.5rem;">Das Erstgespräch</p>
-          <p style="font-size: 0.9rem; color: var(--text-mid); line-height: 1.65;">Das Erstgespräch dauert ca. 30 Minuten, ist kostenlos und unverbindlich. Es geht darum, sich kennenzulernen, dein Anliegen zu verstehen und zu schauen, ob eine Zusammenarbeit passt.</p>
+          
         </div>
       </div>
 
       <!-- Anfrage-Formular -->
       <div class="fade-up fade-up--delay-1">
-        <form class="form js-contact-form" novalidate>
+        <form class="form js-contact-form" action="https://formspree.io/f/xeajwznr" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="Neue Anfrage über idechraft.ch">
           <h3 class="form__title">Anfrage oder Erstgespräch</h3>
 
           <div class="form-row">
@@ -198,7 +189,7 @@
 
           <div class="form-group">
             <label for="telefon">Telefon (optional)</label>
-            <input type="tel" id="telefon" name="telefon" placeholder="+41 XX XXX XX XX" autocomplete="tel">
+            <input type="tel" id="telefon" name="telefon" placeholder="Optional" autocomplete="tel">
           </div>
 
           <div class="form-group">
@@ -270,12 +261,12 @@
 
       <div class="fade-up fade-up--delay-1" style="padding: 1.5rem; background: var(--sand); border-radius: var(--radius-md);">
         <h4 style="font-size: 1rem; margin-bottom: 0.5rem; color: var(--petrol-deep);">Wie läuft eine Sitzung ab?</h4>
-        <p style="font-size: 0.88rem; max-width: none;">Sitzungen dauern je nach Format 50 bis 90 Minuten. Sie können in Winterthur stattfinden oder online – was besser zu deiner Situation passt.</p>
+        <p style="font-size: 0.88rem; max-width: none;">Die Sitzungen finden spazierend im Wald oder auf einer Bank statt, in einem Raum oder online. Du wählst zwischen drei Runden: kleine Runde (30 Min.), mittlere Runde (60 Min.) und grosse Runde (90–120 Min.). Die Teamsupervision findet vor Ort bei euch statt.</p>
       </div>
 
       <div class="fade-up fade-up--delay-2" style="padding: 1.5rem; background: var(--sand); border-radius: var(--radius-md);">
         <h4 style="font-size: 1rem; margin-bottom: 0.5rem; color: var(--petrol-deep);">Was ist der Unterschied zwischen Coaching und Therapie?</h4>
-        <p style="font-size: 0.88rem; max-width: none;">Coaching und lösungsorientierte Beratung richten sich an Menschen, die im Leben stehen und an einer konkreten Situation oder Entwicklung arbeiten möchten. Bei psychischen Erkrankungen ist eine Therapie der richtige Weg – im Erstgespräch schauen wir ehrlich, was zu dir passt.</p>
+        <p style="font-size: 0.88rem; max-width: none;">Coaching und lösungsorientierte Beratung sind keine Psychotherapie. Sie passen, wenn du an einer konkreten Situation, Entscheidung oder Entwicklung arbeiten möchtest. Wenn psychische Beschwerden eine therapeutische Abklärung oder Behandlung brauchen, besprechen wir offen, welche Unterstützung sinnvoll ist.</p>
       </div>
 
       <div class="fade-up fade-up--delay-3" style="padding: 1.5rem; background: var(--sand); border-radius: var(--radius-md);">
@@ -290,7 +281,7 @@
 
       <div class="fade-up fade-up--delay-1" style="padding: 1.5rem; background: var(--sand); border-radius: var(--radius-md);">
         <h4 style="font-size: 1rem; margin-bottom: 0.5rem; color: var(--petrol-deep);">Was kostet eine Begleitung?</h4>
-        <p style="font-size: 0.88rem; max-width: none;">Eine Einzelsitzung kostet CHF [XXX].– (rund [XX] Min.). Das Erstgespräch ist kostenlos. Für regelmässige Begleitungen, Jugendliche oder besondere Situationen finden wir eine faire Lösung – sprich mich gerne an.</p>
+        <p style="font-size: 0.88rem; max-width: none;">Kleine Runde (30 Min.): CHF 75.– · Mittlere Runde (60 Min.): CHF 130.– · Grosse Runde (90–120 Min.): CHF 200.–. Das Erstgespräch ist kostenlos. Für regelmässige Begleitungen, Jugendliche oder besondere Situationen finden wir eine faire Lösung – sprich mich gerne an.</p>
       </div>
 
     </div>
@@ -302,7 +293,7 @@
     <div class="footer__grid">
       <div>
         <img src="../assets/logo-white.png" alt="ide Chraft" style="width:140px;margin-bottom:0.75rem;">
-        <p class="footer__tagline">Klarheit schaffen. Entwicklung ermöglichen. Veränderung begleiten.</p>
+        <p class="footer__tagline">Hinschauen. Und selbstbestimmt leben.</p>
       </div>
       <div class="footer__col">
         <h4>Angebote</h4>
@@ -310,6 +301,7 @@
         <a href="maennerarbeit.html">Männerarbeit</a>
         <a href="jugend.html">Jugend&shy;begleitung</a>
         <a href="supervision.html">Supervision</a>
+        <a href="fragenkiosk.html">Fragenkiosk</a>
       </div>
       <div class="footer__col">
         <h4>Informationen</h4>

@@ -107,22 +107,54 @@ document.addEventListener('DOMContentLoaded', () => {
   fadeEls.forEach(el => observer.observe(el));
 
   // ── Kontaktformular ──────────────────────────────────────
+  // ↓↓↓ FORMSPREE-ADRESSE – nach jedem Upload prüfen, dass diese Zeile stimmt ↓↓↓
+  const FORMSPREE_URL = 'https://formspree.io/f/xeajwznr';
+  // ↑↑↑ FORMSPREE-ADRESSE ↑↑↑
+
   const form = document.querySelector('.js-contact-form');
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const btn = form.querySelector('[type="submit"]');
       const success = form.querySelector('.form__success');
+      const originalText = btn.textContent;
+
+      // Vorhandene Fehlermeldung entfernen
+      const oldError = form.querySelector('.form__error');
+      if (oldError) oldError.remove();
+
+      // Pflichtfelder prüfen
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
 
       btn.disabled = true;
       btn.textContent = 'Wird gesendet…';
 
-      // Versand-Simulation – hier später echten Endpoint anbinden (z.B. Formspree)
-      setTimeout(() => {
-        form.querySelectorAll('.form-row, .form-group, .form__privacy, [type="submit"]')
-          .forEach(el => el.style.display = 'none');
-        if (success) success.style.display = 'block';
-      }, 1200);
+      try {
+        const response = await fetch(FORMSPREE_URL, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          form.querySelectorAll('.form-row, .form-group, .form__privacy, [type="submit"]')
+            .forEach(el => el.style.display = 'none');
+          if (success) success.style.display = 'block';
+        } else {
+          throw new Error('Server antwortet nicht wie erwartet');
+        }
+      } catch (err) {
+        btn.disabled = false;
+        btn.textContent = originalText;
+        const msg = document.createElement('p');
+        msg.className = 'form__error';
+        msg.setAttribute('role', 'alert');
+        msg.innerHTML = 'Das hat leider nicht geklappt. Schreib mir bitte direkt an <a href="mailto:kontakt@idechraft.ch">kontakt@idechraft.ch</a> – ich melde mich zuverlässig.';
+        btn.insertAdjacentElement('afterend', msg);
+      }
     });
   }
 

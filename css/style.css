@@ -1663,3 +1663,258 @@ button:focus:not(:focus-visible) { outline: none; }
 .skip-link:focus {
   left: 0;
 }
+
+/* ── Fokus-Poster (Coaching) ─────────────────────────────── */
+.poster-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 2.2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.poster svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  box-shadow: 0 16px 34px rgba(28,58,58,0.20);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.poster--1 svg { transform: rotate(-2deg); }
+.poster--2 svg { transform: rotate(1.5deg); }
+.poster--3 svg { transform: rotate(-1.2deg); }
+.poster svg:hover { transform: rotate(0deg) scale(1.02); box-shadow: 0 22px 44px rgba(28,58,58,0.28); }
+
+/* ── Fragenkiosk – Bude mit Lichtern & Frage-Anzeige ───── */
+.kiosk {
+  position: relative;
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: center;
+}
+.kiosk__stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1100 / 1220;
+}
+.kiosk__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Leuchtende Lichterkette entlang des Marquee-Rahmens */
+.kiosk__lights {
+  position: absolute;
+  top: 8.4%;
+  left: 13.2%;
+  right: 13.2%;
+  height: 22.4%;
+  border-radius: 8px;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  box-shadow: inset 0 0 30px 11px rgba(255, 216, 74, 0.85);
+  opacity: 0.75;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .kiosk__lights { animation: kioskGlow 1.9s ease-in-out infinite; }
+}
+@keyframes kioskGlow {
+  0%, 100% { opacity: 0.85; box-shadow: inset 0 0 34px 13px rgba(255,216,74,0.9); }
+  50%      { opacity: 0.30; box-shadow: inset 0 0 18px 6px  rgba(255,216,74,0.5); }
+}
+
+/* Frage erscheint auf dem Schild unten */
+.kiosk__display {
+  position: absolute;
+  left: 19.4%;
+  right: 19.4%;
+  top: 79.1%;
+  height: 16.5%;
+  background: #FBF5E4;
+  border: 4px solid #E23B1E;
+  border-radius: 9px;
+  box-shadow: inset 0 0 0 3px #EFC246;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.9rem;
+  overflow: hidden;
+}
+.kiosk__display p {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(0.75rem, 2.35vw, 1rem);
+  line-height: 1.28;
+  color: #14356B;
+  margin: 0;
+  max-width: none;
+  transition: opacity 0.2s ease;
+}
+.kiosk__btn { margin-top: 1.4rem; }
+
+/* ── Poster-Karussell ───────────────────────────────────── */
+.poster-carousel { max-width: 460px; margin: 0 auto; position: relative; }
+.poster-carousel__track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  gap: 0;
+  border-radius: 14px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.poster-carousel__track::-webkit-scrollbar { display: none; }
+.poster-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  margin: 0;
+}
+.poster-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+  box-shadow: 0 14px 30px rgba(28,58,58,0.22);
+}
+.poster-carousel__dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 1.1rem;
+}
+.poster-carousel__dot {
+  width: 11px; height: 11px;
+  border-radius: 50%;
+  border: 2px solid var(--copper);
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+}
+.poster-carousel__dot[aria-selected="true"] { background: var(--copper); transform: scale(1.25); }
+.poster-carousel__hint {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-mid);
+  margin-top: 0.5rem;
+}
+
+/* ── Einzelnes Fokus-Poster ─────────────────────────────── */
+.focus-poster { max-width: 400px; margin: 0 auto; }
+.focus-poster img {
+  width: 100%; height: auto; display: block;
+  border-radius: 14px;
+  box-shadow: 0 14px 30px rgba(28,58,58,0.22);
+}
+
+/* ── Zitat-Block ────────────────────────────────────────── */
+.quote-block {
+  margin: var(--space-md) 0 0;
+  padding: 1.4rem 1.6rem;
+  background: var(--sand-warm);
+  border-left: 3px solid var(--copper);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+.quote-block blockquote {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-mid);
+}
+.quote-block figcaption {
+  margin-top: 0.7rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--copper-text);
+}
+
+/* ── Fragenkiosk-Pakete ─────────────────────────────────── */
+.frage-pakete {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+  max-width: 460px;
+}
+.frage-paket {
+  background: var(--sand);
+  border: 2px solid var(--copper);
+  border-radius: var(--radius-sm);
+  padding: 0.9rem 0.6rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.frage-paket--mitte { background: var(--sand-warm); }
+.frage-paket__menge {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--petrol-deep);
+}
+.frage-paket__preis {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--copper-text);
+}
+.frage-paket__zusatz {
+  font-size: 0.72rem;
+  color: var(--text-mid);
+}
+@media (max-width: 480px) {
+  .frage-pakete { grid-template-columns: 1fr; max-width: 260px; }
+}
+
+/* ── Angebote als kompakte Linkliste (Variante B) ───────── */
+.angebot-links {
+  max-width: 560px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.angebot-link {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 0.4rem;
+  border-bottom: 1px solid rgba(28,58,58,0.12);
+  color: var(--petrol-deep);
+  transition: background var(--transition);
+}
+.angebot-link:first-child { border-top: 1px solid rgba(28,58,58,0.12); }
+.angebot-link:hover { background: var(--sand); }
+.angebot-link__name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+.angebot-link__desc {
+  flex: 1;
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  text-align: right;
+}
+.angebot-link__arrow { color: var(--copper-text); font-weight: 700; }
+@media (max-width: 560px) {
+  .angebot-link { flex-wrap: wrap; }
+  .angebot-link__desc { text-align: left; flex-basis: 100%; }
+}
+
+/* ── Formular-Fehlermeldung ─────────────────────────────── */
+.form__error {
+  margin-top: 0.9rem;
+  padding: 0.8rem 1rem;
+  background: #FBEFE9;
+  border-left: 3px solid #C2492E;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  color: var(--text-dark);
+}
+.form__error a { color: var(--copper-text); font-weight: 600; text-decoration: underline; }
