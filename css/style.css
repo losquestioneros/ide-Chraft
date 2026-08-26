@@ -1918,3 +1918,133 @@ button:focus:not(:focus-visible) { outline: none; }
   color: var(--text-dark);
 }
 .form__error a { color: var(--copper-text); font-weight: 600; text-decoration: underline; }
+
+/* ── Vier Kacheln: immer 2 × 2 ───────────────────────────── */
+.grid--quad { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 720px) { .grid--quad { grid-template-columns: 1fr; } }
+
+/* ── Säulen: Coaching · Beratung · Training ──────────────── */
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.pillar {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.pillar__label {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--copper-text);
+}
+
+.pillar__key {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--petrol-deep);
+  margin: 0.3rem 0 1.1rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid var(--border);
+  hyphens: none;
+}
+
+.pillar__text {
+  font-size: 0.97rem;
+  color: var(--text-mid);
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+}
+
+.pillar__themes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+}
+.pillar__themes li { display: flex; align-items: flex-start; gap: 0.55rem; }
+.pillar__themes li::before {
+  content: '';
+  flex: none;
+  width: 5px; height: 5px;
+  margin-top: 0.55rem;
+  border-radius: 50%;
+  background: var(--copper);
+}
+
+.pillar__more {
+  margin-top: 1.1rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.83rem;
+  line-height: 1.55;
+  color: var(--text-light);
+}
+
+.pillars-note {
+  margin-top: 2.25rem;
+  font-size: 0.83rem;
+  letter-spacing: 0.04em;
+  color: var(--text-light);
+}
+
+/* ── Haltungs-Karten («Worauf du dich verlassen kannst») ─── */
+.lead--statement {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+  font-weight: 500;
+  line-height: 1.55;
+  color: var(--petrol-deep);
+}
+
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.principle-card {
+  background: var(--sand-warm);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  border: 1px solid var(--border);
+}
+
+.principle-card__label {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--copper-text);
+}
+
+.principle-card__claim {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--petrol-deep);
+  margin: 0.5rem 0 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.principle-card__text {
+  font-size: 1rem;
+  color: var(--text-mid);
+  line-height: 1.65;
+}
