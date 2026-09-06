@@ -29,10 +29,11 @@
     <div class="nav__inner">
       <a href="../index.html" class="nav__logo-img"><img src="../assets/logo.png" alt="ide Chraft Logo" class="logo-dark"></a>
       <ul class="nav__links">
-        <li><a href="coaching.html">Coaching</a></li>
+        <li><a href="coaching.html">Einzelpersonen</a></li>
+        <li><a href="jugend.html">Junge Menschen</a></li>
+        <li><a href="fachpersonen.html">Fachpersonen</a></li>
+        <li><a href="supervision.html">Teams</a></li>
         <li><a href="maennerarbeit.html">Männerarbeit</a></li>
-        <li><a href="jugend.html">Jugend&shy;begleitung</a></li>
-        <li><a href="supervision.html">Supervision</a></li>
         <li><a href="fragenkiosk.html" class="nav__link--active" aria-current="page">Fragenkiosk</a></li>
         <li><a href="ueber-mich.html">Über mich</a></li>
       </ul>
@@ -46,14 +47,9 @@
 
 <div class="nav__mobile" role="dialog">
   <button class="nav__mobile-close">&times;</button>
-  <a href="../index.html">Start</a>
-  <a href="coaching.html">Coaching</a>
-  <a href="maennerarbeit.html">Männerarbeit</a>
-  <a href="jugend.html">Jugend&shy;begleitung</a>
-  <a href="supervision.html">Supervision</a>
-  <a href="fragenkiosk.html">Fragenkiosk</a>
-  <a href="ueber-mich.html">Über mich</a>
-  <a href="kontakt.html">Kontakt</a>
+  <a href="../index.html">Start</a><a href="coaching.html">Einzelpersonen</a><a href="jugend.html">Junge Menschen</a>
+  <a href="fachpersonen.html">Fachpersonen</a><a href="supervision.html">Teams</a><a href="maennerarbeit.html">Männerarbeit</a>
+  <a href="fragenkiosk.html">Fragenkiosk</a><a href="ueber-mich.html">Über mich</a><a href="kontakt.html">Kontakt</a>
 </div>
 
 <header class="page-hero" id="hauptinhalt">
@@ -122,12 +118,12 @@
           </div>
         </div>
         <div class="frage-pakete fade-up">
-          <div class="frage-paket"><span class="frage-paket__menge">1 Frage</span><span class="frage-paket__preis">CHF 8.–</span></div>
-          <div class="frage-paket frage-paket--mitte"><span class="frage-paket__menge">3 Fragen</span><span class="frage-paket__preis">CHF 20.–</span></div>
-          <div class="frage-paket"><span class="frage-paket__menge">5 Fragen</span><span class="frage-paket__preis">CHF 37.–</span><span class="frage-paket__zusatz">mit etwas Kontext</span></div>
+          <div class="frage-paket"><span class="frage-paket__menge">1 Frage</span><span class="frage-paket__preis">CHF 9.–</span><span class="frage-paket__zusatz">ein Satz von dir</span></div>
+          <div class="frage-paket frage-paket--mitte"><span class="frage-paket__menge">3 Fragen</span><span class="frage-paket__preis">CHF 24.–</span><span class="frage-paket__zusatz">drei Sätze von dir</span></div>
+          <div class="frage-paket"><span class="frage-paket__menge">5 Fragen</span><span class="frage-paket__preis">CHF 37.–</span><span class="frage-paket__zusatz">ein kurzer Text von dir</span></div>
         </div>
         <p style="margin-top: 1rem; font-size: 0.92rem; color: var(--text-mid);">Bezahlt wird unkompliziert per Twint. Deine Frage kommt innerhalb von 3–5 Werktagen bei dir an.</p>
-        <a href="kontakt.html" class="btn btn-primary" style="margin-top: 0.5rem;">Persönliche Frage anfragen</a>
+        <a href="#frage-stellen" class="btn btn-primary" style="margin-top: 0.5rem;">Persönliche Frage anfragen</a>
       </div>
       <div class="intro-split__visual fade-up fade-up--delay-2">
         <div class="img-placeholder img-placeholder--photo" style="border-radius: var(--radius-md);">
@@ -135,6 +131,73 @@
           <span class="img-placeholder__label">Fragen · Weg</span>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="section--sand" id="frage-stellen">
+  <div class="container">
+    <div class="section__header section__header--center fade-up">
+      <p class="eyebrow">Deine persönliche Frage</p>
+      <h2>Was beschäftigt dich gerade?</h2>
+      <div class="divider divider--center"></div>
+      <p>Schildere mir deine aktuelle Situation. Du erhältst keine fertige Lösung, sondern eine oder mehrere persönliche Fragen, die dir helfen können, anders hinzuschauen und deinen eigenen nächsten Schritt zu finden.</p>
+    </div>
+
+    <form class="kiosk-form fade-up" id="kioskForm" action="https://formspree.io/f/xeajwznr" method="POST" novalidate>
+      <input type="hidden" name="_subject" id="kioskSubject" value="Neue Fragenkiosk-Anfrage – 1 Frage">
+      <input type="hidden" name="Anfrageart" value="Fragenkiosk">
+
+      <div class="form-group">
+        <label for="kioskSituation">Deine Situation <span aria-hidden="true">*</span></label>
+        <textarea id="kioskSituation" name="Situation" rows="7" required placeholder="Schildere deine aktuelle Situation, zu der du eine oder mehrere Fragen erhalten möchtest …"></textarea>
+      </div>
+
+      <fieldset class="kiosk-choice">
+        <legend>Wie viele Fragen möchtest du?</legend>
+        <div class="kiosk-choice__grid">
+          <label class="kiosk-option">
+            <input type="radio" name="Paket" value="1 Frage – CHF 9.–" checked data-label="1 Frage" data-twint="TWINT_LINK_1_FRAGE">
+            <span class="kiosk-option__menge">1 Frage</span>
+            <span class="kiosk-option__preis">CHF 9.–</span>
+            <span class="kiosk-option__zusatz">ein Satz von dir</span>
+          </label>
+          <label class="kiosk-option">
+            <input type="radio" name="Paket" value="3 Fragen – CHF 24.–" data-label="3 Fragen" data-twint="TWINT_LINK_3_FRAGEN">
+            <span class="kiosk-option__menge">3 Fragen</span>
+            <span class="kiosk-option__preis">CHF 24.–</span>
+            <span class="kiosk-option__zusatz">drei Sätze von dir</span>
+          </label>
+          <label class="kiosk-option">
+            <input type="radio" name="Paket" value="5 Fragen – CHF 37.–" data-label="5 Fragen" data-twint="TWINT_LINK_5_FRAGEN">
+            <span class="kiosk-option__menge">5 Fragen</span>
+            <span class="kiosk-option__preis">CHF 37.–</span>
+            <span class="kiosk-option__zusatz">ein kurzer Text von dir</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="kioskVorname">Vorname (optional)</label>
+          <input type="text" id="kioskVorname" name="Vorname" autocomplete="given-name">
+        </div>
+        <div class="form-group">
+          <label for="kioskMail">E-Mail-Adresse <span aria-hidden="true">*</span></label>
+          <input type="email" id="kioskMail" name="E-Mail" required autocomplete="email">
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Frage einwerfen</button>
+      <p class="kiosk-form__note">Ich lese deine Situation persönlich und formuliere die Fragen individuell für dich.</p>
+      <p class="form__error" id="kioskError" hidden>Das hat leider nicht geklappt. Schreib mir stattdessen direkt an <a href="mailto:kontakt@idechraft.ch">kontakt@idechraft.ch</a>.</p>
+    </form>
+
+    <div class="kiosk-danke fade-up" id="kioskDanke" hidden>
+      <h3>Danke für dein Vertrauen.</h3>
+      <p>Jetzt fehlt nur noch die Bezahlung mit Twint.</p>
+      <a href="#" class="btn btn-primary" id="kioskTwint" rel="noopener">Mit TWINT bezahlen</a>
+      <p class="kiosk-danke__note">Nach Zahlungseingang erhältst du deine persönlichen Fragen per E-Mail.</p>
     </div>
   </div>
 </section>
@@ -176,7 +239,7 @@
         <a href="coaching.html">Coaching</a>
         <a href="maennerarbeit.html">Männerarbeit</a>
         <a href="jugend.html">Jugend&shy;begleitung</a>
-        <a href="supervision.html">Supervision</a>
+        <a href="supervision.html">Teams</a>
         <a href="fragenkiosk.html">Fragenkiosk</a>
       </div>
       <div class="footer__col">
@@ -214,6 +277,69 @@
       btn.textContent = 'Noch eine Frage ziehen';
     });
   }
+})();
+</script>
+
+<script>
+/* ── Fragenkiosk: Twint-Zahlungslinks zentral hinterlegen ──────────
+   Sobald die drei Links im TWINT-Händlerportal erstellt sind,
+   hier eintragen – sonst nirgends im Code. */
+const TWINT_LINKS = {
+  'TWINT_LINK_1_FRAGE':   '',   // 1 Frage · CHF 9.–
+  'TWINT_LINK_3_FRAGEN':  '',   // 3 Fragen · CHF 24.–
+  'TWINT_LINK_5_FRAGEN':  ''    // 5 Fragen · CHF 37.–
+};
+
+(function () {
+  const form  = document.getElementById('kioskForm');
+  if (!form) return;
+  const danke = document.getElementById('kioskDanke');
+  const error = document.getElementById('kioskError');
+  const btn   = document.getElementById('kioskTwint');
+  const subj  = document.getElementById('kioskSubject');
+
+  function gewaehlt() {
+    return form.querySelector('input[name="Paket"]:checked');
+  }
+
+  form.querySelectorAll('input[name="Paket"]').forEach(r => {
+    r.addEventListener('change', () => {
+      subj.value = 'Neue Fragenkiosk-Anfrage – ' + gewaehlt().dataset.label;
+    });
+  });
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+    error.hidden = true;
+    const knopf = form.querySelector('button[type="submit"]');
+    knopf.disabled = true;
+    knopf.textContent = 'Wird gesendet …';
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (!res.ok) throw new Error('Formspree');
+
+      const link = TWINT_LINKS[gewaehlt().dataset.twint];
+      if (link) {
+        btn.href = link;
+      } else {
+        btn.href = 'mailto:kontakt@idechraft.ch?subject=Twint-Zahlung%20Fragenkiosk';
+        btn.textContent = 'Zahlungsangaben anfragen';
+      }
+      form.hidden = true;
+      danke.hidden = false;
+      danke.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } catch (err) {
+      error.hidden = false;
+      knopf.disabled = false;
+      knopf.textContent = 'Frage einwerfen';
+    }
+  });
 })();
 </script>
 </body>

@@ -2398,3 +2398,96 @@ section[id], article[id] { scroll-margin-top: 96px; }
 }
 .info-fold__sources a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
 .info-fold__sources a:hover { color: var(--copper-text); }
+
+/* Navigation mit sieben Punkten etwas kompakter */
+@media (max-width: 1180px) {
+  .nav__links { gap: 1.35rem; }
+  .nav__links a { font-size: 0.82rem; }
+}
+
+.hero__term {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--copper-light);
+}
+
+/* ── Fragenkiosk-Formular ────────────────────────────────── */
+.kiosk-form { margin-top: 2rem; }
+.kiosk-form textarea { min-height: 160px; }
+
+.kiosk-choice { border: 0; padding: 0; margin: 1.5rem 0; }
+.kiosk-choice legend {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--petrol-deep);
+  margin-bottom: 0.85rem;
+  padding: 0;
+}
+.kiosk-choice__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.85rem;
+}
+
+.kiosk-option {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: var(--transition);
+}
+.kiosk-option input {
+  position: absolute;
+  opacity: 0;
+  width: 1px; height: 1px;
+}
+.kiosk-option__menge {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--petrol-deep);
+}
+.kiosk-option__preis { font-size: 1.05rem; color: var(--copper-text); }
+.kiosk-option__zusatz { font-size: 0.78rem; color: var(--text-light); }
+
+.kiosk-option:hover { border-color: var(--copper); }
+.kiosk-option:has(input:checked) {
+  border-color: var(--copper);
+  box-shadow: inset 0 0 0 1px var(--copper);
+  background: var(--sand-warm);
+}
+.kiosk-option:has(input:focus-visible) { outline: 2px solid var(--petrol-mid); outline-offset: 2px; }
+
+.kiosk-form__note {
+  margin-top: 1rem;
+  font-size: 0.86rem;
+  color: var(--text-light);
+}
+
+.kiosk-danke {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+.kiosk-danke h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--petrol-deep);
+  margin-bottom: 0.5rem;
+}
+.kiosk-danke > p { color: var(--text-mid); margin-bottom: 1.5rem; }
+.kiosk-danke__note {
+  margin-top: 1.25rem;
+  font-size: 0.82rem;
+  color: var(--text-light);
+}
