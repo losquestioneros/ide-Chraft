@@ -166,7 +166,7 @@ p { font-size: 1rem; color: var(--text-mid); max-width: 66ch; }
 .nav.scrolled .nav__logo-img .logo-dark { display: block; }
 /* Auf Unterseiten ist die Nav immer .scrolled – nur das dunkle Logo wird angezeigt */
 
-.nav__links { display: flex; align-items: center; gap: 2rem; }
+.nav__links { display: flex; align-items: center; gap: 1.9rem; white-space: nowrap; }
 
 .nav__links a {
   font-family: var(--font-display);
@@ -2398,10 +2398,21 @@ section[id], article[id] { scroll-margin-top: 96px; }
 .info-fold__sources a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
 .info-fold__sources a:hover { color: var(--copper-text); }
 
-/* Navigation mit sieben Punkten etwas kompakter */
-@media (max-width: 1180px) {
-  .nav__links { gap: 1.35rem; }
-  .nav__links a { font-size: 0.82rem; }
+/* Navigation mit sieben Punkten: nie umbrechen, sondern schrumpfen */
+@media (max-width: 1240px) {
+  .nav__links { gap: 1.4rem; }
+  .nav__links a { font-size: 0.83rem; }
+}
+@media (max-width: 1120px) {
+  .nav__links { gap: 1rem; }
+  .nav__links a { font-size: 0.78rem; }
+  .nav__cta .btn { font-size: 0.76rem; padding: 0.55rem 1rem; }
+}
+/* Darunter übernimmt das Burger-Menü */
+@media (max-width: 1010px) {
+  .nav__links { display: none; }
+  .nav__cta .btn { display: none; }
+  .nav__burger { display: flex; }
 }
 
 .hero__term {
