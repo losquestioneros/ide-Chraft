@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://www.idechraft.ch/</loc><priority>1.0</priority></url>
-  <url><loc>https://www.idechraft.ch/pages/coaching.html</loc><priority>0.9</priority></url>
-  <url><loc>https://www.idechraft.ch/pages/maennerarbeit.html</loc><priority>0.9</priority></url>
-  <url><loc>https://www.idechraft.ch/pages/jugend.html</loc><priority>0.9</priority></url>
-  <url><loc>https://www.idechraft.ch/pages/fachpersonen.html</loc><priority>0.8</priority></url>
-  <url><loc>https://www.idechraft.ch/pages/supervision.html</loc><priority>0.8</priority></url>
-  <url><loc>https://www.idechraft.ch/pages/ueber-mich.html</loc><priority>0.7</priority></url>
-  <url><loc>https://www.idechraft.ch/pages/kontakt.html</loc><priority>0.8</priority></url>
-  <url><loc>https://www.idechraft.ch/pages/fragenkiosk.html</loc></url>
+  <url><loc>https://www.idechraft.ch/einzelpersonen</loc><priority>0.9</priority></url>
+  <url><loc>https://www.idechraft.ch/junge-menschen</loc><priority>0.8</priority></url>
+  <url><loc>https://www.idechraft.ch/fachpersonen</loc><priority>0.8</priority></url>
+  <url><loc>https://www.idechraft.ch/teams</loc><priority>0.8</priority></url>
+  <url><loc>https://www.idechraft.ch/maennerarbeit</loc><priority>0.8</priority></url>
+  <url><loc>https://www.idechraft.ch/fragen</loc><priority>0.7</priority></url>
+  <url><loc>https://www.idechraft.ch/ueber-mich</loc><priority>0.7</priority></url>
+  <url><loc>https://www.idechraft.ch/kontakt</loc><priority>0.7</priority></url>
+  <url><loc>https://www.idechraft.ch/impressum</loc><priority>0.3</priority></url>
+  <url><loc>https://www.idechraft.ch/datenschutz</loc><priority>0.3</priority></url>
 </urlset>

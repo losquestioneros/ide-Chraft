@@ -1,0 +1,21 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/pages/coaching.html", "destination": "/einzelpersonen", "permanent": true },
+    { "source": "/pages/jugend.html", "destination": "/junge-menschen", "permanent": true },
+    { "source": "/pages/supervision.html", "destination": "/teams", "permanent": true },
+    { "source": "/pages/fragenkiosk.html", "destination": "/fragen", "permanent": true },
+    { "source": "/pages/maennerarbeit.html", "destination": "/maennerarbeit", "permanent": true },
+    { "source": "/pages/fachpersonen.html", "destination": "/fachpersonen", "permanent": true },
+    { "source": "/pages/ueber-mich.html", "destination": "/ueber-mich", "permanent": true },
+    { "source": "/pages/kontakt.html", "destination": "/kontakt", "permanent": true },
+    { "source": "/pages/impressum.html", "destination": "/impressum", "permanent": true },
+    { "source": "/pages/datenschutz.html", "destination": "/datenschutz", "permanent": true },
+    { "source": "/pages/:pfad*", "destination": "/", "permanent": true },
+    { "source": "/coaching", "destination": "/einzelpersonen", "permanent": false },
+    { "source": "/jugend", "destination": "/junge-menschen", "permanent": false },
+    { "source": "/supervision", "destination": "/teams", "permanent": false },
+    { "source": "/fragenkiosk", "destination": "/fragen", "permanent": false }
+  ]
+}
