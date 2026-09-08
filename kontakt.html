@@ -161,7 +161,7 @@
 
       <!-- Anfrage-Formular -->
       <div class="fade-up fade-up--delay-1">
-        <form class="form js-contact-form" action="https://formspree.io/f/xeajwznr" method="POST" novalidate>
+        <form id="anfrage" class="form js-contact-form" action="https://formspree.io/f/xeajwznr" method="POST" novalidate>
           <input type="hidden" name="_subject" value="Neue Anfrage über idechraft.ch">
           <h3 class="form__title">Anfrage oder Erstgespräch</h3>
 
@@ -199,6 +199,26 @@
               <option value="supervision-gruppe">Gruppen&shy;supervision</option>
               <option value="supervision-leitung">Leitungs&shy;supervision</option>
               <option value="allgemein">Allgemeine Anfrage</option>
+            </select>
+          </div>
+
+          <div class="form-group js-thema-group">
+            <label for="thema">Ich möchte mehr erfahren über</label>
+            <select id="thema" name="thema">
+              <option value="" selected>Noch offen – ich erzähle es unten</option>
+              <option value="Gesunde &amp; klare Grenzen setzen">Gesunde &amp; klare Grenzen setzen</option>
+              <option value="Arbeit mit dem Dramadreieck">Arbeit mit dem Dramadreieck</option>
+              <option value="Nervensystem-Regulation">Nervensystem-Regulation</option>
+              <option value="Impulskontrolle">Impulskontrolle</option>
+              <option value="Selbstsabotage überwinden">Selbstsabotage überwinden</option>
+              <option value="Erlerntes Verhalten erkennen">Erlerntes Verhalten erkennen</option>
+              <option value="Alte Glaubensmuster wandeln">Alte Glaubensmuster wandeln</option>
+              <option value="Kraftvolle Gewohnheiten aufbauen">Kraftvolle Gewohnheiten aufbauen</option>
+              <option value="Unangenehme innere Zustände integrieren">Unangenehme innere Zustände integrieren</option>
+              <option value="Breathwork">Breathwork</option>
+              <option value="Innere-Kind-Arbeit">Innere-Kind-Arbeit</option>
+              <option value="Beziehungsthemen">Beziehungsthemen</option>
+              <option value="Men's Work">Men's Work</option>
             </select>
           </div>
 

@@ -113,6 +113,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const form = document.querySelector('.js-contact-form');
   if (form) {
+    // Thema aus der Adresse übernehmen (z. B. /kontakt?thema=Breathwork)
+    (function () {
+      const wunsch = new URLSearchParams(window.location.search).get('thema');
+      if (!wunsch) return;
+      const themaFeld = form.querySelector('#thema');
+      const angebotFeld = form.querySelector('#angebot');
+      if (!themaFeld) return;
+      const treffer = Array.from(themaFeld.options).find(
+        o => o.value.toLowerCase() === wunsch.toLowerCase()
+      );
+      if (!treffer) return;
+      themaFeld.value = treffer.value;
+      if (angebotFeld && !angebotFeld.value) angebotFeld.value = 'coaching';
+      const gruppe = themaFeld.closest('.form-group');
+      if (gruppe) {
+        gruppe.classList.add('form-group--hervor');
+        setTimeout(() => gruppe.classList.remove('form-group--hervor'), 2600);
+      }
+    })();
+
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const btn = form.querySelector('[type="submit"]');

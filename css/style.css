@@ -1318,6 +1318,34 @@ section { padding: var(--space-xl) 0; }
   border-color: var(--petrol-deep);
 }
 
+/* Klickbare Themen-Pillen (Einzelpersonen → Kontaktformular) */
+.topic-tags--links a {
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--petrol-deep);
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.topic-tags--links a:hover,
+.topic-tags--links a:focus-visible {
+  background: var(--petrol-deep);
+  color: var(--white);
+  border-color: var(--petrol-deep);
+  transform: translateY(-1px);
+}
+
+/* Kurzes Aufleuchten des vorausgewählten Themenfelds */
+.form-group--hervor select {
+  border-color: var(--copper);
+  box-shadow: 0 0 0 3px rgba(181, 130, 90, 0.18);
+}
+
 
 /* ── Selbstsabotage-Abschnitt ────────────────────────────── */
 .sabotage-hint {
