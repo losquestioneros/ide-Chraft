@@ -2646,7 +2646,7 @@ section[id], article[id] { scroll-margin-top: 96px; }
   justify-content: center;
   text-align: center;
   padding: 1.25rem;
-  background: var(--white);
+  background: transparent;
   animation: opening-intro-weg 1.1s ease 8.6s forwards;
 }
 
@@ -2657,6 +2657,8 @@ section[id], article[id] { scroll-margin-top: 96px; }
 
 /* ── Die Frage ───────────────────────────────────────────── */
 .opening__question {
+  position: relative;
+  bottom: 8vh;
   font-family: var(--font-display);
   font-weight: 500;
   font-size: clamp(1.6rem, 5vw, 3rem);
@@ -2688,7 +2690,7 @@ section[id], article[id] { scroll-margin-top: 96px; }
 .opening__circle {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 48.3%; /* Höhe des Horizonts im Bild */
   width: clamp(54px, 9vw, 86px);
   height: auto;
   transform: translate(-50%, -50%) scale(0.72);
@@ -2747,7 +2749,7 @@ section[id], article[id] { scroll-margin-top: 96px; }
    harter Bildrand entsteht.                                  */
 .hero--hell .hero__bg {
   display: block;
-  background: url('../assets/meer-ruhig.jpg') center 51% / cover no-repeat;
+  background: url('../assets/meer-ruhig.jpg') center 48.3% / cover no-repeat;
   opacity: 0.24;
   pointer-events: none;
   -webkit-mask-image: linear-gradient(to bottom,
