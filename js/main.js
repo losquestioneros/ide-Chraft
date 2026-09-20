@@ -5,6 +5,33 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // ── Navigation ─────────────────────────────────────────
+  // ── Auftakt auf der Startseite ───────────────────────────
+  // Nach dem Ablauf steht alles; wer nicht warten will,
+  // überspringt ihn mit Klick, Taste oder Scrollen.
+  const auftakt = document.querySelector('.js-auftakt');
+  if (auftakt) {
+    const ENDE = 13300; // muss zur letzten Animation im CSS passen
+    let fertig = false;
+
+    const abschliessen = () => {
+      if (fertig) return;
+      fertig = true;
+      auftakt.classList.add('auftakt-fertig');
+      window.removeEventListener('scroll', abschliessen);
+      window.removeEventListener('wheel', abschliessen);
+      window.removeEventListener('touchmove', abschliessen);
+      window.removeEventListener('keydown', abschliessen);
+      auftakt.removeEventListener('click', abschliessen);
+    };
+
+    window.addEventListener('scroll', abschliessen, { passive: true });
+    window.addEventListener('wheel', abschliessen, { passive: true });
+    window.addEventListener('touchmove', abschliessen, { passive: true });
+    window.addEventListener('keydown', abschliessen);
+    auftakt.addEventListener('click', abschliessen);
+    setTimeout(abschliessen, ENDE);
+  }
+
   const nav = document.querySelector('.nav');
   const burger = document.querySelector('.nav__burger');
   const mobileNav = document.querySelector('.nav__mobile');
@@ -50,8 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ── Slot-Machine Headline ────────────────────────────────
-  const reel = document.querySelector('.js-slot-reel');
-  if (reel) {
+  document.querySelectorAll('.js-slot-reel').forEach((reel) => {
     const baseWords = Array.from(reel.children).map(el => el.textContent);
     const n = baseWords.length;
     const LINE = 1.3; // muss mit CSS line-height der Reel-Spans übereinstimmen (em)
@@ -90,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     setInterval(spin, 3200);
-  }
+  });
 
   // ── Scroll-Animationen ───────────────────────────────────
   const fadeEls = document.querySelectorAll('.fade-up');

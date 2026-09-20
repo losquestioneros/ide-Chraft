@@ -2621,3 +2621,167 @@ section[id], article[id] { scroll-margin-top: 96px; }
 @media (max-width: 700px) {
   .image-band::before { padding-top: 62%; }
 }
+
+
+/* ═══ Auftakt auf der Startseite ═══════════════════════════ */
+/* Alles auf einem Bildschirm, auf Weiss:
+   1) Frage erscheint wie geschrieben und verblasst
+   2) der Kreis atmet zweimal – ein Moment der Stille
+   3) der Hero erscheint.
+   Ein Klick, ein Tastendruck oder Scrollen überspringt alles. */
+
+.hero--auftakt {
+  background: var(--white);
+  min-height: 100svh;
+  position: relative;
+}
+
+/* ── Auftakt-Ebene über dem Hero ─────────────────────────── */
+.hero__intro {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.25rem;
+  background: var(--white);
+  animation: opening-intro-weg 1.1s ease 11.9s forwards;
+}
+
+@keyframes opening-intro-weg {
+  from { opacity: 1; }
+  to   { opacity: 0; visibility: hidden; }
+}
+
+/* ── Die Frage ───────────────────────────────────────────── */
+.opening__question {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.6rem, 5vw, 3rem);
+  line-height: 1.35;
+  color: var(--petrol-deep);
+  max-width: 20ch;
+  margin: 0;
+  animation: opening-frage-weg 1.1s ease 3.6s forwards;
+}
+
+.opening__char {
+  opacity: 0;
+  animation: opening-schreiben 0.5s ease forwards;
+  animation-delay: calc(0.3s + var(--i) * 0.029s);
+  white-space: pre-wrap;
+}
+
+@keyframes opening-schreiben {
+  from { opacity: 0; filter: blur(2px); }
+  to   { opacity: 1; filter: blur(0); }
+}
+
+@keyframes opening-frage-weg {
+  from { opacity: 1; }
+  to   { opacity: 0; visibility: hidden; }
+}
+
+/* ── Ein Moment der Stille: der Kreis atmet ──────────────── */
+.opening__circle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: clamp(54px, 9vw, 86px);
+  height: auto;
+  transform: translate(-50%, -50%) scale(0.72);
+  opacity: 0;
+  animation:
+    opening-kreis-auf 1.1s ease 4.4s forwards,
+    opening-atmen 3.6s ease-in-out 5.5s 2;
+}
+
+@keyframes opening-kreis-auf {
+  to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+/* Einatmen – halten – ausatmen */
+@keyframes opening-atmen {
+  0%   { transform: translate(-50%, -50%) scale(1);    filter: drop-shadow(0 0 0 rgba(255,182,0,0.35)); }
+  38%  { transform: translate(-50%, -50%) scale(1.32); filter: drop-shadow(0 0 24px rgba(255,182,0,0.42)); }
+  52%  { transform: translate(-50%, -50%) scale(1.32); filter: drop-shadow(0 0 24px rgba(255,182,0,0.30)); }
+  100% { transform: translate(-50%, -50%) scale(1);    filter: drop-shadow(0 0 0 rgba(255,182,0,0.35)); }
+}
+
+/* ── Der Hero erscheint ──────────────────────────────────── */
+.hero--auftakt .hero__content,
+.hero--auftakt .hero__scroll {
+  opacity: 0;
+  animation: opening-auf 1.4s ease 12.2s forwards;
+}
+
+.hero--auftakt .hero__content { transform: translateY(12px); }
+
+@keyframes opening-auf {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Übersprungen: alles sofort da ───────────────────────── */
+.hero--auftakt.auftakt-fertig .hero__intro {
+  animation: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease;
+}
+
+.hero--auftakt.auftakt-fertig .hero__content,
+.hero--auftakt.auftakt-fertig .hero__scroll {
+  animation: none;
+  opacity: 1;
+  transform: none;
+}
+
+/* ═══ Heller Hero (nur Startseite) ═════════════════════════ */
+.hero--hell .hero__bg,
+.hero--hell .hero__texture { display: none; }
+
+.hero--hell .hero__slot { color: var(--petrol-mid); }
+
+.hero--hell .hero__slot::after {
+  background: linear-gradient(to bottom,
+    var(--white) 0%, transparent 22%,
+    transparent 78%, var(--white) 100%);
+  opacity: 1;
+}
+
+.hero--hell .hero__tagline { color: var(--petrol-deep); font-weight: 600; }
+.hero--hell .hero__sub { color: var(--text-mid); }
+.hero--hell .hero__term { color: var(--copper-text); }
+.hero--hell .hero__kicker { color: var(--copper-text); }
+
+.hero--hell .hero__scroll-line { background: var(--petrol-light); }
+
+.hero--hell .btn-sand {
+  background: var(--petrol-deep);
+  color: var(--white);
+}
+.hero--hell .btn-sand:hover {
+  background: var(--petrol-mid);
+  box-shadow: 0 6px 20px rgba(28,58,58,0.18);
+}
+
+.hero--hell .btn-sand-outline {
+  color: var(--petrol-deep);
+  border-color: var(--petrol-deep);
+}
+.hero--hell .btn-sand-outline:hover {
+  background: var(--petrol-deep);
+  color: var(--white);
+}
+
+/* Wer Bewegung reduziert haben möchte, sieht alles sofort */
+@media (prefers-reduced-motion: reduce) {
+  .hero__intro { animation: none; opacity: 0; visibility: hidden; }
+  .opening__question,
+  .opening__char,
+  .opening__circle { animation: none; }
+  .hero--auftakt .hero__content,
+  .hero--auftakt .hero__scroll { animation: none; opacity: 1; transform: none; }
+}
