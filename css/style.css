@@ -2647,7 +2647,7 @@ section[id], article[id] { scroll-margin-top: 96px; }
   text-align: center;
   padding: 1.25rem;
   background: var(--white);
-  animation: opening-intro-weg 1.1s ease 11.9s forwards;
+  animation: opening-intro-weg 1.1s ease 8.6s forwards;
 }
 
 @keyframes opening-intro-weg {
@@ -2695,7 +2695,7 @@ section[id], article[id] { scroll-margin-top: 96px; }
   opacity: 0;
   animation:
     opening-kreis-auf 1.1s ease 4.4s forwards,
-    opening-atmen 3.6s ease-in-out 5.5s 2;
+    opening-atmen 3.8s ease-in-out 5.5s 1;
 }
 
 @keyframes opening-kreis-auf {
@@ -2714,7 +2714,7 @@ section[id], article[id] { scroll-margin-top: 96px; }
 .hero--auftakt .hero__content,
 .hero--auftakt .hero__scroll {
   opacity: 0;
-  animation: opening-auf 1.4s ease 12.2s forwards;
+  animation: opening-auf 1.4s ease 8.9s forwards;
 }
 
 .hero--auftakt .hero__content { transform: translateY(12px); }
@@ -2739,16 +2739,65 @@ section[id], article[id] { scroll-margin-top: 96px; }
 }
 
 /* ═══ Heller Hero (nur Startseite) ═════════════════════════ */
-.hero--hell .hero__bg,
 .hero--hell .hero__texture { display: none; }
+
+/* ── Meer hinter dem Auftakt ─────────────────────────────── */
+/* Sehr leise Bildebene hinter Walze, Logo und Claim. Oben und
+   unten blendet sie in das Weiss der Seite aus, damit kein
+   harter Bildrand entsteht.                                  */
+.hero--hell .hero__bg {
+  display: block;
+  background: url('../assets/meer-ruhig.jpg') center 51% / cover no-repeat;
+  opacity: 0.24;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to bottom,
+    transparent 0%, rgba(0,0,0,1) 26%,
+    rgba(0,0,0,1) 77%, transparent 100%);
+          mask-image: linear-gradient(to bottom,
+    transparent 0%, rgba(0,0,0,1) 26%,
+    rgba(0,0,0,1) 77%, transparent 100%);
+}
+
+@media (max-width: 700px) {
+  .hero--hell .hero__bg { opacity: 0.19; }
+}
 
 .hero--hell .hero__slot { color: var(--petrol-mid); }
 
-.hero--hell .hero__slot::after {
-  background: linear-gradient(to bottom,
-    var(--white) 0%, transparent 22%,
-    transparent 78%, var(--white) 100%);
-  opacity: 1;
+/* ── Zentrierter Hero auf Weiss ──────────────────────────── */
+/* Der Block aus Walze und Logo ist so breit wie das Logo und
+   steht mittig; die Wörter der Walze beginnen dadurch genau
+   an der linken Kante von «ide» und «Chraft».                */
+/* Der ganze Inhalt bildet einen Block, der mittig steht.
+   Innerhalb beginnt alles an derselben Linie – dort, wo im
+   Logo das «i» von «ide» und das «C» von «Chraft» ansetzen.  */
+.hero--hell .hero__content {
+  width: fit-content;
+  max-width: 100%;
+  margin-inline: auto;
+  text-align: left;
+}
+
+.hero--hell .hero__headline { margin-inline: 0; }
+.hero--hell .hero__slot { text-align: left; }
+
+.hero--hell .hero__tagline,
+.hero--hell .hero__sub { margin-inline: 0; }
+
+.hero--hell .hero__actions { justify-content: flex-start; }
+.hero--hell .hero__kicker { justify-content: flex-start; }
+
+/* Die Walze blendet nicht mehr gegen Weiss aus, sondern gegen
+   Transparenz – sonst läge ein weisser Streifen auf dem Bild. */
+.hero--hell .hero__slot::after { display: none; }
+
+.hero--hell .hero__slot {
+  -webkit-mask-image: linear-gradient(to bottom,
+    transparent 0%, rgba(0,0,0,1) 22%,
+    rgba(0,0,0,1) 78%, transparent 100%);
+          mask-image: linear-gradient(to bottom,
+    transparent 0%, rgba(0,0,0,1) 22%,
+    rgba(0,0,0,1) 78%, transparent 100%);
 }
 
 .hero--hell .hero__tagline { color: var(--petrol-deep); font-weight: 600; }

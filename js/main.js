@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // überspringt ihn mit Klick, Taste oder Scrollen.
   const auftakt = document.querySelector('.js-auftakt');
   if (auftakt) {
-    const ENDE = 13300; // muss zur letzten Animation im CSS passen
+    const ENDE = 10000; // muss zur letzten Animation im CSS passen
     let fertig = false;
 
     const abschliessen = () => {
