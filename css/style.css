@@ -2759,7 +2759,14 @@ section[id], article[id] { scroll-margin-top: 96px; }
 }
 
 @media (max-width: 700px) {
-  .hero--hell .hero__bg { opacity: 0.19; }
+  /* Auf dem Handy etwas mehr Bild: die Fläche ist kleiner,
+     darum darf das Meer deutlicher durchkommen.             */
+  .hero--hell .hero__bg { opacity: 0.27; }
+
+  /* Logo und Walze kleiner, damit mehr Hintergrund sichtbar
+     bleibt und der Hero auf den Bildschirm passt.           */
+  .hero--hell .hero__logo { width: clamp(168px, 52vw, 230px); }
+  .hero--hell .hero__slot { font-size: clamp(1.75rem, 8.2vw, 2.4rem); }
 }
 
 .hero--hell .hero__slot { color: var(--petrol-mid); }
