@@ -1785,21 +1785,47 @@ button:focus:not(:focus-visible) { outline: none; }
 /* ── Poster-Karussell ───────────────────────────────────── */
 .poster-carousel { max-width: 460px; margin: 0 auto; position: relative; }
 .poster-carousel__track {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  gap: 0;
+  position: relative;
+  overflow: hidden;
   border-radius: 14px;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  touch-action: pan-y;          /* senkrecht scrollen bleibt möglich */
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  outline-offset: 4px;
 }
-.poster-carousel__track::-webkit-scrollbar { display: none; }
+.poster-carousel__track.is-dragging { cursor: grabbing; }
+.poster-carousel__rail {
+  display: flex;
+  will-change: transform;
+}
 .poster-slide {
   flex: 0 0 100%;
-  scroll-snap-align: center;
   margin: 0;
+  padding: 0 0 26px;            /* Platz für den Schatten */
 }
+.poster-slide img { -webkit-user-drag: none; pointer-events: none; }
+
+.poster-carousel__arrow {
+  position: absolute;
+  top: calc(50% - 13px);
+  transform: translateY(-50%);
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.88);
+  color: var(--petrol-deep);
+  font-size: 1.7rem;
+  line-height: 1;
+  padding: 0 0 3px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(28,58,58,0.18);
+  transition: background var(--transition), transform var(--transition);
+  z-index: 2;
+}
+.poster-carousel__arrow:hover { background: var(--white); transform: translateY(-50%) scale(1.06); }
+.poster-carousel__arrow--prev { left: 10px; }
+.poster-carousel__arrow--next { right: 10px; }
 .poster-slide img {
   width: 100%;
   height: auto;
@@ -1811,7 +1837,7 @@ button:focus:not(:focus-visible) { outline: none; }
   display: flex;
   justify-content: center;
   gap: 0.6rem;
-  margin-top: 1.1rem;
+  margin-top: 0.2rem;
 }
 .poster-carousel__dot {
   width: 11px; height: 11px;
@@ -2843,3 +2869,162 @@ section[id], article[id] { scroll-margin-top: 96px; }
   .hero--auftakt .hero__content,
   .hero--auftakt .hero__scroll { animation: none; opacity: 1; transform: none; }
 }
+
+
+/* ═══ Lesetext eine Stufe grösser (v100) ═══════════════════ */
+/* Navigation, Knöpfe, Kapseln und Pillen bleiben unverändert,
+   damit die Menüleiste nicht ins Rutschen kommt.              */
+body { font-size: 1.0625rem; }
+p { font-size: 1.0625rem; }
+
+.hero__sub { font-size: 1.02rem; }
+
+.group-card__text,
+.offer-card__text,
+.process-step__content p,
+.path-card__text,
+.phase-card__text,
+.path-tile__text,
+.cv-text,
+.angebot-link__desc,
+.pillar__text,
+.pillar__themes,
+.contact-detail { font-size: 0.98rem; }
+
+.supervision-card__text,
+.phase-card__list li,
+.concept__items li,
+.sabotage-cat li,
+.offer-card__list { font-size: 0.95rem; }
+
+.concept__panel > p,
+.info-fold__body p,
+.quote-block blockquote,
+.fit__no .fit__intro { font-size: 1.01rem; }
+
+.fit__no p { font-size: 0.98rem; }
+
+.testimonial-card__text,
+.principle-card__text,
+.step-plain p,
+.concept__result > p { font-size: 1.0625rem; }
+
+.cv-line__text { font-size: 1.03rem; }
+
+/* Eingabefelder ab 16 px: verhindert zudem das automatische
+   Hineinzoomen auf dem iPhone beim Antippen.                 */
+.form-group input,
+.form-group select,
+.form-group textarea { font-size: 1rem; }
+
+
+/* ═══ Anpassungen v100 ═════════════════════════════════════ */
+
+/* Hero: der Dachbegriff als eigene Zeile, gleich gross wie
+   «Hinschauen. Wahrnehmen. Selbstbestimmt leben.»             */
+.hero__tagline--term {
+  margin-top: 0;
+  font-weight: 700;
+  color: var(--copper-light);
+}
+.hero--hell .hero__tagline--term { color: var(--copper-text); font-weight: 700; }
+
+/* Akzentfarbe innerhalb einer Überschrift */
+.text-akzent { color: var(--copper-text); }
+
+/* Konzept-Felder: Coaching / Beratung / Training als grosse
+   Wörter, das Schlüsselwort klein in der Kapsel darüber.      */
+.concept--three .concept__panel h3 {
+  font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* Verbinder ohne «und»: nur Linie und Pfeil */
+.concept__joint { gap: 0.6rem; }
+
+/* «Mehr dazu» als richtiger Knopf */
+.concept__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.25rem;
+  border: 1.5px solid var(--copper-text);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  color: var(--copper-text);
+  background: transparent;
+}
+.concept__link:hover,
+.concept__link:focus-visible {
+  background: var(--copper-text);
+  border-color: var(--copper-text);
+  color: var(--white);
+}
+.concept__panel--left .concept__link { border-color: var(--petrol-deep); color: var(--petrol-deep); }
+.concept__panel--left .concept__link:hover,
+.concept__panel--left .concept__link:focus-visible { background: var(--petrol-deep); color: var(--white); }
+
+/* Ergebnisbalken: Leitsatz oben, Marke darunter */
+.concept__result-brand--unten {
+  margin: 0;
+  font-size: 0.82rem;
+}
+
+/* ── Tarife auf der Kontaktseite ─────────────────────────── */
+.tarife {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--border);
+  scroll-margin-top: 110px;
+}
+.tarife .eyebrow { margin-bottom: 0.5rem; }
+.tarife__intro { font-size: 1rem; margin-bottom: 1rem; }
+.tarife__liste { margin: 0 0 1rem; padding: 0; }
+.tarife__zeile {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.8rem 0;
+  border-bottom: 1px dotted var(--sand-dark);
+}
+.tarife__runde { font-size: 0.98rem; color: var(--text-mid); }
+.tarife__runde strong { color: var(--petrol-deep); font-weight: 600; }
+.tarife__zeit {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-top: 0.1rem;
+}
+.tarife__preis {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--copper-text);
+  white-space: nowrap;
+}
+.tarife__note { font-size: 0.88rem; color: var(--text-light); }
+
+/* ── Fragenkiosk: anklickbare Preiskarten ────────────────── */
+a.frage-paket {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+}
+a.frage-paket:hover,
+a.frage-paket:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(148, 99, 60, 0.18);
+}
+.frage-paket__wahl {
+  margin-top: 0.45rem;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--copper-text);
+}
+#frage-stellen { scroll-margin-top: 90px; }
+.concept--three .concept__chip { align-self: flex-start; }
+.hero__tagline:has(+ .hero__tagline--term) { margin-bottom: 0.35rem; }

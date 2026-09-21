@@ -119,9 +119,9 @@
           </div>
         </div>
         <div class="frage-pakete fade-up">
-          <div class="frage-paket"><span class="frage-paket__menge">1 Frage</span><span class="frage-paket__preis">CHF 8.–</span><span class="frage-paket__zusatz">dazu ein Satz von mir</span></div>
-          <div class="frage-paket frage-paket--mitte"><span class="frage-paket__menge">3 Fragen</span><span class="frage-paket__preis">CHF 21.–</span><span class="frage-paket__zusatz">dazu drei Sätze von mir</span></div>
-          <div class="frage-paket"><span class="frage-paket__menge">5 Fragen</span><span class="frage-paket__preis">CHF 33.–</span><span class="frage-paket__zusatz">dazu ein kurzer Text von mir</span></div>
+          <a href="#frage-stellen" class="frage-paket js-paket-wahl" data-paket="1 Frage"><span class="frage-paket__menge">1 Frage</span><span class="frage-paket__preis">CHF 8.–</span><span class="frage-paket__zusatz">dazu ein Satz von mir</span><span class="frage-paket__wahl">Auswählen →</span></a>
+          <a href="#frage-stellen" class="frage-paket frage-paket--mitte js-paket-wahl" data-paket="3 Fragen"><span class="frage-paket__menge">3 Fragen</span><span class="frage-paket__preis">CHF 21.–</span><span class="frage-paket__zusatz">dazu drei Sätze von mir</span><span class="frage-paket__wahl">Auswählen →</span></a>
+          <a href="#frage-stellen" class="frage-paket js-paket-wahl" data-paket="5 Fragen"><span class="frage-paket__menge">5 Fragen</span><span class="frage-paket__preis">CHF 33.–</span><span class="frage-paket__zusatz">dazu ein kurzer Text von mir</span><span class="frage-paket__wahl">Auswählen →</span></a>
         </div>
         <p style="margin-top: 1rem; font-size: 0.92rem; color: var(--text-mid);">Bezahlt wird unkompliziert per Twint. Deine Frage kommt innerhalb von 3–5 Werktagen bei dir an.</p>
         <a href="#frage-stellen" class="btn btn-primary" style="margin-top: 0.5rem;">Persönliche Frage anfragen</a>
@@ -340,6 +340,28 @@ const TWINT_LINKS = {
       knopf.disabled = false;
       knopf.textContent = 'Frage einwerfen';
     }
+  });
+})();
+</script>
+<script>
+/* Preiskarten oben: Klick wählt das Paket im Formular vor
+   und springt direkt zum Textfeld.                          */
+(function () {
+  var karten = document.querySelectorAll('.js-paket-wahl');
+  var feld = document.getElementById('kioskSituation');
+  karten.forEach(function (k) {
+    k.addEventListener('click', function (e) {
+      e.preventDefault();
+      var wahl = k.getAttribute('data-paket');
+      var radio = document.querySelector('input[name="Paket"][data-label="' + wahl + '"]');
+      if (radio) {
+        radio.checked = true;
+        radio.dispatchEvent(new Event('change', { bubbles: true }));
+      }
+      var ziel = document.getElementById('frage-stellen');
+      if (ziel) ziel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (feld) setTimeout(function () { feld.focus({ preventScroll: true }); }, 650);
+    });
   });
 })();
 </script>
