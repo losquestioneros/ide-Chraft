@@ -3036,7 +3036,16 @@ a.frage-paket:focus-visible {
   .hero--hell {
     justify-content: flex-start;
     padding-top: 9.5rem;          /* rund 90 px Luft unter der Kopfzeile */
-    padding-bottom: 4.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  /* Der Scroll-Hinweis steht auf dem Handy unter den Knöpfen
+     statt am unteren Rand – dort lag er sonst über dem Knopf. */
+  .hero--hell .hero__scroll {
+    position: static;
+    transform: none;
+    align-self: center;
+    margin-top: 2.2rem;
   }
   .hero--hell .hero__logo { width: clamp(132px, 38vw, 170px); margin-top: 0.25rem; }
   .hero--hell .hero__slot { font-size: clamp(1.35rem, 6.2vw, 1.7rem); }
