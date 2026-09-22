@@ -13,6 +13,29 @@
   <link rel="canonical" href="https://www.idechraft.ch/">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
   <link rel="apple-touch-icon" href="assets/favicon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script>
+  /* Der Auftakt wartet, bis die Schrift geladen ist – so erscheint die
+     Frage gleich in der richtigen Schrift. Spätestens nach 2,5 s geht es los. */
+  (function (d) {
+    d.documentElement.classList.add('schrift-warten');
+    var fertig = false;
+    window.schriftBereit = function () {
+      if (fertig) return; fertig = true;
+      d.documentElement.classList.remove('schrift-warten');
+      window.__schriftBereit = true;
+      d.dispatchEvent(new Event('schrift-bereit'));
+    };
+    window.schriftLaden = function () {
+      if (d.fonts && d.fonts.load) {
+        d.fonts.load('500 1em Quicksand').then(window.schriftBereit, window.schriftBereit);
+      } else { window.schriftBereit(); }
+    };
+    setTimeout(window.schriftBereit, 2500);
+  })(document);
+  </script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Nunito+Sans:wght@300;400;600;700&display=swap" onload="schriftLaden()" onerror="schriftBereit()">
   <link rel="stylesheet" href="css/style.css">
   <script type="application/ld+json">
   {

@@ -29,7 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('touchmove', abschliessen, { passive: true });
     window.addEventListener('keydown', abschliessen);
     auftakt.addEventListener('click', abschliessen);
-    setTimeout(abschliessen, ENDE);
+
+    // Die Uhr läuft erst, wenn die Schrift geladen ist (siehe <head>)
+    const uhrStarten = () => setTimeout(abschliessen, ENDE);
+    if (window.__schriftBereit || !document.documentElement.classList.contains('schrift-warten')) uhrStarten();
+    else document.addEventListener('schrift-bereit', uhrStarten, { once: true });
   }
 
   const nav = document.querySelector('.nav');

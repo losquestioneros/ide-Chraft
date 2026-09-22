@@ -4,7 +4,7 @@
    Schrift: Quicksand (rund, passend zum Logo) + Nunito Sans
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Nunito+Sans:wght@300;400;600;700&display=swap');
+/* Schriften werden im <head> jeder Seite geladen (schneller als @import). */
 
 /* ── Reset & Base ─────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -3055,4 +3055,16 @@ a.frage-paket:focus-visible {
     justify-content: center;
     text-align: center;
   }
+}
+
+/* ── Auftakt wartet auf die Schrift ──────────────────────── */
+/* Solange Quicksand noch lädt, steht der ganze Ablauf still
+   und die Frage ist unsichtbar. Danach läuft alles im Takt.  */
+.schrift-warten .hero__intro,
+.schrift-warten .opening__question,
+.schrift-warten .opening__char,
+.schrift-warten .opening__circle,
+.schrift-warten .hero--auftakt .hero__content,
+.schrift-warten .hero--auftakt .hero__scroll {
+  animation-play-state: paused;
 }
