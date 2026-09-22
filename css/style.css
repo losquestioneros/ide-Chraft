@@ -3028,3 +3028,31 @@ a.frage-paket:focus-visible {
 #frage-stellen { scroll-margin-top: 90px; }
 .concept--three .concept__chip { align-self: flex-start; }
 .hero__tagline:has(+ .hero__tagline--term) { margin-bottom: 0.35rem; }
+
+/* ═══ Handy: mehr Ruhe im Hero (v101) ══════════════════════ */
+/* Inhalt beginnt mit deutlichem Abstand zur Kopfzeile,
+   Logo, Walze und Zeilen sind kleiner, damit das Meer wirkt. */
+@media (max-width: 700px) {
+  .hero--hell {
+    justify-content: flex-start;
+    padding-top: 9.5rem;          /* rund 90 px Luft unter der Kopfzeile */
+    padding-bottom: 4.5rem;
+  }
+  .hero--hell .hero__logo { width: clamp(132px, 38vw, 170px); margin-top: 0.25rem; }
+  .hero--hell .hero__slot { font-size: clamp(1.35rem, 6.2vw, 1.7rem); }
+
+  .hero--hell .hero__tagline {
+    font-size: 0.98rem;
+    margin-top: 1.6rem;
+  }
+  .hero--hell .hero__tagline--term { margin-top: 0; font-size: 0.98rem; }
+  .hero--hell .hero__sub { font-size: 0.92rem; line-height: 1.6; margin-bottom: 1.6rem; }
+
+  .hero--hell .hero__actions { gap: 0.6rem; }
+  .hero--hell .hero__actions .btn {
+    font-size: 0.84rem;
+    padding: 0.72rem 1.3rem;
+    justify-content: center;
+    text-align: center;
+  }
+}
