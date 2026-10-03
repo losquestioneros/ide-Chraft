@@ -1,0 +1,899 @@
+<!DOCTYPE html><html lang="de-CH"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wegbegleitung – Systemisches Coaching im Wald | ide Chraft</title>
+<meta name="description" content="Systemisches Coaching und Wegbegleitung im Wald in der Region Winterthur: in Bewegung Klarheit gewinnen, Muster erkennen, Grenzen setzen, selbstbestimmt leben. Auch im Raum oder online.">
+<link rel="canonical" href="https://www.idechraft.ch/wegbegleitung">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/favicon-180.png">
+<meta property="og:title" content="Wegbegleitung – Systemisches Coaching im Wald | ide Chraft">
+<meta property="og:description" content="Systemisches Coaching und Wegbegleitung im Wald in der Region Winterthur: in Bewegung Klarheit gewinnen, Muster erkennen, Grenzen setzen, selbstbestimmt leben. Auch im Raum oder online.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.idechraft.ch/wegbegleitung">
+<meta property="og:locale" content="de_CH">
+<meta property="og:site_name" content="ide Chraft">
+<meta name="keywords" content="Systemisches Coaching im Wald, Wegbegleitung im Wald, Coaching im Wald Winterthur, systemisches Coaching Winterthur, Walk-and-Talk-Coaching, Outdoor-Coaching, Coaching draussen, Selbstsabotage überwinden, Grenzen setzen, Nervensystem-Regulation, Breathwork Winterthur">
+<link rel="preload" href="/fonts/Figtree-3.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/fonts/fonts.css">
+<style>
+*{box-sizing:border-box}
+body{margin:0;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+p{margin:0 0 1rem}
+a{color:inherit}
+ul{list-style:none;margin:0;padding:0}
+.wrap{max-width:1120px;margin:0 auto;padding:0 1.5rem}
+.schmal{max-width:740px}
+.mitte{text-align:center}
+.marke{position:fixed;top:0;left:0;z-index:99;background:#111;color:#fff;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;padding:.3rem .7rem;font-family:system-ui}
+/* Navigation */
+.nav{position:absolute;top:0;left:0;right:0;z-index:5;padding:1.5rem 0}
+.nav__in{display:flex;align-items:center;justify-content:space-between;gap:2rem}
+.nav__logo{height:34px;width:auto}
+.nav ul{display:flex;gap:1.8rem;align-items:center}
+.nav a{text-decoration:none;font-size:.9rem}
+@media(max-width:860px){.nav ul{display:none}}
+/* Auftakt */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:7rem 0 4rem;overflow:hidden}
+.hero__bild{position:absolute;inset:0;background:url('/assets/meer-ruhig.jpg') center 48.3%/cover no-repeat;opacity:.22;
+-webkit-mask-image:linear-gradient(to bottom,transparent,#000 26%,#000 77%,transparent);mask-image:linear-gradient(to bottom,transparent,#000 26%,#000 77%,transparent)}
+.intro{position:absolute;inset:0;z-index:3;display:flex;align-items:center;justify-content:center;text-align:center;padding:1.2rem;animation:iw 1.1s ease 8.6s forwards}
+.intro p{max-width:20ch;margin:0;animation:fw 1.1s ease 3.6s forwards}
+.z{opacity:0;animation:sc .5s ease forwards;animation-delay:calc(.3s + var(--i)*.029s)}
+.sonne{position:absolute;left:50%;top:48.3%;width:clamp(50px,7.5vw,78px);transform:translate(-50%,-50%) scale(.72);opacity:0;animation:sa 1.1s ease 4.4s forwards,at 3.8s ease-in-out 5.5s 1}
+@keyframes sc{from{opacity:0;filter:blur(2px)}to{opacity:1;filter:blur(0)}}
+@keyframes fw{to{opacity:0;visibility:hidden}}
+@keyframes iw{to{opacity:0;visibility:hidden}}
+@keyframes sa{to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+@keyframes at{0%{transform:translate(-50%,-50%) scale(1)}38%{transform:translate(-50%,-50%) scale(1.3);filter:drop-shadow(0 0 22px rgba(255,182,0,.38))}52%{transform:translate(-50%,-50%) scale(1.3)}100%{transform:translate(-50%,-50%) scale(1)}}
+.hero__in{position:relative;z-index:2;opacity:0;animation:ab 1.4s ease 8.9s forwards}
+@keyframes ab{to{opacity:1}}
+.fertig .intro{animation:none;opacity:0;visibility:hidden}
+.fertig .hero__in{animation:none;opacity:1}
+.walze{height:1.3em;overflow:hidden}
+.walze div{animation:rollen 16s infinite}
+.walze span{display:block;height:1.3em;line-height:1.3em}
+@keyframes rollen{0%,14%{transform:translateY(0)}20%,34%{transform:translateY(-1.3em)}40%,54%{transform:translateY(-2.6em)}60%,74%{transform:translateY(-3.9em)}80%,94%{transform:translateY(-5.2em)}100%{transform:translateY(0)}}
+.formen{display:flex;flex-wrap:wrap;align-items:center;gap:.8rem}
+.knoepfe{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.5rem}
+/* Foto mit Beschriftung beim Darüberfahren */
+.foto{position:relative;overflow:hidden}
+.foto img{width:100%;height:100%;object-fit:cover}
+.foto span{position:absolute;left:0;right:0;bottom:0;padding:1.5rem 1.3rem .9rem;color:#fff;font-size:.82rem;letter-spacing:.06em;
+background:linear-gradient(to top,rgba(20,32,32,.82),transparent);opacity:0;transition:opacity .3s}
+.foto:hover span{opacity:1}
+@media(hover:none){.foto span{opacity:1}}
+.karten{display:grid;grid-template-columns:repeat(3,1fr)}
+@media(max-width:900px){.karten{grid-template-columns:1fr;max-width:540px;margin-inline:auto}}
+.richtung{display:flex;flex-wrap:wrap;gap:.5rem}
+.ph{font-style:italic;opacity:.6}
+
+
+:root{--bg:#FCFAF7;--warm:#F3EEE7;--ink:#26332F;--mid:#55635E;--hell:#8E9A95;--linie:#E5DFD6;--akzent:#6E8B7A}
+body{background:var(--bg);color:var(--ink);font-family:'Figtree',sans-serif;font-size:17.5px;line-height:1.72}
+h2,h3{font-family:'Figtree',sans-serif;font-weight:700;letter-spacing:-.02em;line-height:1.12;margin:0 0 .5em}
+h2{font-size:clamp(2rem,4.6vw,3.2rem)}h3{font-size:1.3rem}
+.intro p{font-family:'Source Serif 4',Georgia,serif;font-weight:300;font-size:clamp(1.6rem,4.6vw,2.9rem);line-height:1.3;color:var(--ink)}
+.abschnitt{padding:clamp(4rem,9vw,7rem) 0}
+.warm{background:var(--warm)}
+.nav a{color:var(--ink);opacity:.8}
+.nav__cta{background:var(--ink);color:var(--bg);padding:.5rem 1.1rem;border-radius:999px}
+.walze{font-family:'Figtree',sans-serif;font-weight:700;font-size:clamp(1.8rem,4.6vw,3rem);color:var(--akzent);letter-spacing:-.02em}
+.logo{width:clamp(195px,27vw,310px)}
+.slogan{font-family:'Source Serif 4',serif;font-style:italic;font-size:1.2rem;color:var(--mid);margin:1rem 0 0}
+.formen{margin:.9rem 0 1rem;font-weight:600;font-size:1rem;color:var(--ink)}
+.formen span+span::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--akzent);margin-right:.8rem;vertical-align:middle}
+.lead{color:var(--mid);max-width:31rem}
+.btn{display:inline-block;text-decoration:none;font-weight:600;font-size:.95rem;padding:.85rem 1.7rem;border-radius:999px;background:var(--ink);color:var(--bg);transition:.2s}
+.btn:hover{background:var(--akzent)}
+.btn--l{background:transparent;color:var(--ink);border:1.5px solid var(--linie)}
+.btn--l:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.nr{font-weight:700;font-size:.8rem;letter-spacing:.14em;color:var(--akzent);margin:0}
+.eyebrow{font-weight:600;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--hell);margin:.2rem 0 1rem}
+.person{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(2rem,5vw,4rem);align-items:center}
+.foto{border-radius:26px;aspect-ratio:4/5}
+.anlass li{font-size:1.1rem;line-height:1.5;padding:1.1rem 1.3rem;background:#fff;border-radius:16px;margin-bottom:.7rem;box-shadow:0 2px 10px rgba(38,51,47,.05)}
+.warm .anlass li{background:var(--bg)}
+.bkopf{max-width:660px;margin-bottom:2.8rem}
+.begegnung{font-family:'Source Serif 4',serif;font-size:1.35rem;line-height:1.5;margin-top:1.3rem}
+.arbeitsweisen{margin-top:1.8rem}
+.karten{gap:1.6rem}
+.karte{position:relative;padding:1.7rem 1.6rem 3rem;background:#fff;border-radius:22px}
+.warm .karte{background:var(--bg)}
+.knr{font-weight:700;font-size:.78rem;letter-spacing:.14em;color:var(--akzent);margin:0 0 .5rem}
+.karte li{padding:.3rem 0 .3rem 1rem;position:relative;color:var(--mid);font-size:.95rem}
+.karte li::before{content:'';position:absolute;left:0;top:.85em;width:5px;height:5px;border-radius:50%;background:var(--akzent)}
+.form{position:absolute;left:1.6rem;bottom:1.2rem;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--hell)}
+.richtung-blk{margin-top:2.6rem;text-align:center}
+.richtung{justify-content:center}
+.richtung span{background:#fff;border-radius:999px;padding:.45rem 1rem;font-size:.9rem;color:var(--mid)}
+.warm .richtung span{background:var(--bg)}
+.einstieg{display:flex;justify-content:space-between;align-items:center;gap:1.2rem;padding:1.3rem 1.7rem;border-radius:999px;background:#fff;text-decoration:none;box-shadow:0 2px 12px rgba(38,51,47,.06)}
+.einstieg b{color:var(--akzent);font-weight:700;white-space:nowrap}@media(max-width:640px){.einstieg{border-radius:22px;padding:1.1rem 1.3rem}}
+.supervision{display:flex;flex-wrap:wrap;gap:1.4rem;justify-content:space-between;align-items:center;padding:2rem;border-radius:24px;background:#fff}
+.warm .supervision{background:var(--bg)}
+.mehr{margin-top:2.4rem;text-align:center}
+footer{padding:3rem 0;background:var(--ink);color:#C7D2CD;font-size:.9rem}
+@media(max-width:820px){.person{grid-template-columns:1fr}.foto{max-width:420px}}
+
+/* ── Grosse Überschriften in Bricolage (aus Design 4) ───── */
+h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.035em;line-height:.98;
+   font-size:clamp(2.4rem,7.5vw,4.6rem)}
+h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;letter-spacing:-.025em;font-size:1.35rem}
+/* Die Auftaktfrage bleibt in der bisherigen Hausschrift */
+.intro p{font-family:'Quicksand',sans-serif;font-weight:500;font-size:clamp(1.6rem,4.8vw,2.9rem);line-height:1.35}
+/* Nummern und die Zeile «Wiedererkennen» fallen weg */
+.nr,.knr{display:none}
+/* Begegnungsblock mit Weiterweg */
+.begegnung{font-family:'Source Serif 4',Georgia,serif;font-size:clamp(1.2rem,2.6vw,1.5rem);line-height:1.5;margin-top:1.4rem}
+.standort{display:inline-block;margin-top:.9rem;font-weight:600;font-size:.95rem;color:var(--akzent);
+  text-decoration:none;border-bottom:1.5px solid var(--akzent);padding-bottom:2px}
+.standort:hover{color:var(--ink);border-color:var(--ink)}
+/* ── Leichter Einstieg als eigener Block ────────────────── */
+.einstieg-sec{padding-top:0;padding-bottom:clamp(4rem,9vw,7rem)}
+.einstieg-panel{background:var(--warm);border-radius:30px;padding:clamp(2rem,5vw,3.4rem);position:relative}
+.einstieg-marke{display:inline-flex;align-items:center;gap:.55rem;background:var(--ink);color:var(--bg);
+  border-radius:999px;padding:.4rem 1.1rem;font-weight:600;font-size:.82rem;letter-spacing:.06em;margin-bottom:1.2rem}
+.einstieg-marke::before{content:'';width:8px;height:8px;border-radius:50%;background:#FFB600}
+.einstieg-panel h2{font-size:clamp(2rem,5.6vw,3.4rem);margin-bottom:.5rem}
+.einstieg{background:var(--bg);box-shadow:none;border:1.5px solid rgba(110,139,122,.35)}
+.einstieg-panel 
+
+/* ── Scroll-Hinweis wie auf der Online-Version ──────────── */
+.hero__scroll{position:absolute;bottom:2.4rem;left:50%;transform:translateX(-50%);z-index:2;
+  width:1px;height:46px;opacity:0;animation:ab 1.3s ease 10s forwards}
+.fertig .hero__scroll{animation:none;opacity:.55}
+.hero__scroll span{display:block;width:1px;height:100%;
+  background:linear-gradient(to bottom,transparent,var(--akzent))}
+/* ── Einstieg: Feld frei stehend im helleren Ton ────────── */
+.einstieg-sec{padding-top:clamp(3rem,7vw,5rem);padding-bottom:clamp(4rem,9vw,7rem)}
+/* ── Aufzählung mit Hakenkreisen ────────────────────────── */
+.karte li{padding-left:1.9rem}
+.karte li::before{content:'';left:0;top:.42em;width:1.05rem;height:1.05rem;border-radius:50%;
+  background:var(--ink) no-repeat center/.62rem .62rem;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23fff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round' d='M3 8.6l3.2 3.2L13 5'/%3E%3C/svg%3E")}
+/* ── Richtungs-Kapseln mit Hover ────────────────────────── */
+.richtung span{transition:background .2s,color .2s;cursor:default}
+.richtung span:hover{background:#F0A32E;color:#fff}
+/* Walze in der Überschriftenschrift */
+.walze{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.035em}
+/* Fusszeile */
+.fuss{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(2,minmax(0,1fr));gap:2.5rem;align-items:start}
+@media(max-width:760px){.fuss{grid-template-columns:1fr 1fr}.fuss__marke{grid-column:1/-1}}
+.fuss__logo{width:140px;margin-bottom:.9rem}
+.fuss__zeile{margin:0 0 .5rem}
+.fuss__slogan{font-family:'Source Serif 4',Georgia,serif;font-style:italic;margin:0;color:#DCE6E2}
+.fuss__titel{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;color:#fff;margin:0 0 .7rem;font-size:.95rem}
+.fuss__spalte{display:flex;flex-direction:column;gap:.5rem}
+.fuss__spalte a{text-decoration:none;opacity:.85;font-size:.95rem}
+.fuss__spalte a:hover{opacity:1;text-decoration:underline}
+.person__satz{color:var(--mid);font-size:1.02rem;line-height:1.7;margin-bottom:1.4rem}
+/* Knopf in der Navigation: weisse Schrift auf dunkler Fläche */
+.nav a.nav__cta{color:var(--bg)!important;opacity:1}
+.nav a.nav__cta:hover{background:var(--akzent)}
+/* Mehr Kontrast im ganzen Farbbild */
+:root{--ink:#1B2A25;--mid:#47554F;--hell:#78867F;--warm:#EFE7DB;--linie:#DCD2C4;--akzent:#4E7360}
+body{color:var(--ink)}
+.lead{color:var(--mid)}
+.eyebrow{color:var(--akzent)}
+.karte{border:1.5px solid var(--linie)}
+.warm .karte{border-color:transparent}
+.fuss__unten{margin-top:2rem;padding-top:1.4rem;border-top:1px solid rgba(255,255,255,.16);font-size:.9rem}
+.fuss__unten p{margin:0;color:#B9C9C2}
+.herz{color:#E0765B}
+.schmal.mitte{margin-inline:auto}
+/* Werdegang: Einrückung auf schmalen Geräten zurücknehmen */
+.cv-track{min-width:0}
+.cv-line{padding-left:0;margin-left:0}
+@media(max-width:420px){.cv-line li{padding-left:0}}
+/* Aufgeklappte Inhalte immer linksbündig an den Punkten */
+details summary{cursor:pointer;user-select:none}
+details.mehr, details.mehr .inhalt, details.mehr ul, details.mehr li,
+.themen-gruppe details, .themen-gruppe .pillen{text-align:left}
+.seitenkopf__zeile{margin:0 0 .6rem}
+/* Überschriften dürfen auf schmalen Geräten trennen */
+h1,h2,h3{overflow-wrap:break-word;hyphens:auto}
+@media(max-width:380px){
+  h2{font-size:clamp(1.45rem,7.6vw,2rem)}
+  .seitenkopf h1{font-size:clamp(2rem,10vw,3rem)}
+}
+.karte li.weitere{font-size:.85rem;color:var(--hell);padding-left:0;margin-top:.5rem}
+.karte li.weitere::before{display:none}
+.kiosk{max-width:520px;margin:0 auto}
+
+
+
+
+
+.einstieg-zweit{font-size:clamp(1.7rem,4.4vw,2.6rem);margin:2.6rem 0 .4rem}
+.einstieg-text{color:var(--mid);max-width:34rem}
+.einstieg+.einstieg-zweit{margin-top:2.8rem}
+/* ── Anklickbare Angebotskarten ─────────────────────────── */
+a.karte{text-decoration:none;display:block;transition:background .25s,color .25s,transform .25s,box-shadow .25s}
+a.karte:hover,a.karte:focus-visible{background:var(--ink);transform:translateY(-3px);box-shadow:0 14px 30px rgba(38,51,47,.16)}
+a.karte:hover h3,a.karte:focus-visible h3{color:#fff}
+a.karte:hover li,a.karte:focus-visible li{color:#E4EBE8}
+a.karte:hover .form,a.karte:focus-visible .form{color:#F0A32E}
+a.karte:hover li::before,a.karte:focus-visible li::before{background-color:#F0A32E}
+a.karte .weiter{display:block;margin-top:1rem;font-weight:600;font-size:.85rem;color:var(--akzent)}
+a.karte:hover .weiter,a.karte:focus-visible .weiter{color:#fff}
+
+/* ── Fokus-Kacheln: vollflächig, invertieren beim Klick ── */
+.fokus-liste{display:grid;gap:.9rem;max-width:760px}
+.fokus__kachel{display:flex;flex-wrap:wrap;align-items:baseline;gap:.2rem 1rem;
+ min-height:0;padding:1.1rem 1.6rem;border-radius:18px;background:var(--ink);color:#fff;
+ text-decoration:none;border:2px solid var(--ink);transition:background .2s,color .2s,transform .2s}
+.fokus__kachel h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.02em;
+ font-size:clamp(1.5rem,4.6vw,2.2rem);color:#fff;margin:0;line-height:1.05;
+ hyphens:none;overflow-wrap:normal;white-space:nowrap}
+.fokus__klein{margin:0;font-size:1.02rem;color:#C6D3CE}
+.fokus__kachel:hover,.fokus__kachel:focus-visible,.fokus__kachel:active{background:transparent;transform:translateY(-3px)}
+.fokus__kachel:hover h3,.fokus__kachel:focus-visible h3,.fokus__kachel:active h3{color:var(--ink)}
+.fokus__kachel:hover .fokus__klein,.fokus__kachel:focus-visible .fokus__klein,.fokus__kachel:active .fokus__klein{color:var(--mid)}
+/* ── (früheres Karussell) ───────────────────────────────── */
+.fokus{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.95fr);gap:clamp(2rem,5vw,4rem);align-items:center}
+.fokus h2{font-size:clamp(1.8rem,4.4vw,2.8rem);line-height:1.05}
+.karussell{position:relative;overflow:hidden;border-radius:22px;touch-action:pan-y;cursor:grab;user-select:none}
+.karussell__schiene{display:flex;will-change:transform}
+.karussell figure{flex:0 0 100%;margin:0}
+.karussell img{width:100%;display:block;pointer-events:none;-webkit-user-drag:none}
+.karussell__pfeil{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border:0;border-radius:50%;
+ background:rgba(255,255,255,.9);color:var(--ink);font-size:1.5rem;line-height:1;cursor:pointer;z-index:2;
+ box-shadow:0 4px 14px rgba(0,0,0,.18)}
+.karussell__pfeil--links{left:10px}.karussell__pfeil--rechts{right:10px}
+.karussell__punkte{display:flex;justify-content:center;gap:.5rem;margin-top:.9rem}
+.karussell__punkte button{width:8px;height:8px;border-radius:50%;border:0;padding:0;background:rgba(38,51,47,.22);cursor:pointer}
+.karussell__punkte button.aktiv{background:var(--akzent);transform:scale(1.25)}
+@media(max-width:820px){.fokus{grid-template-columns:1fr}.fokus__bilder{order:-1}}
+/* ── Abschluss mit rundem Foto ──────────────────────────── */
+.abschluss__in{display:grid;grid-template-columns:220px 1fr;gap:clamp(1.8rem,4vw,3rem);align-items:center;max-width:860px;margin:0 auto}
+.foto.rund{border-radius:50%;aspect-ratio:1}
+.abschluss h2{font-size:clamp(1.8rem,4.4vw,2.6rem)}
+@media(max-width:720px){.abschluss__in{grid-template-columns:1fr;text-align:center}.foto.rund{max-width:200px;margin:0 auto}}
+.einstieg-zweit{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(1.25rem,2.8vw,1.6rem);margin:2.2rem 0 .5rem}
+.einstieg-panel h3:first-of-type{margin-top:1.4rem}
+
+/* Startseite: Überschriften mittig, Fliesstext linksbündig */
+.bereich-kurz .bkopf{text-align:center;max-width:760px;margin:0 auto 2.6rem}
+.bereich-kurz .bkopf h2{margin-bottom:1.1rem}
+.bereich-kurz .bkopf .eyebrow{margin:0 0 .7rem}
+.bereich-kurz .bkopf .begegnung{margin:0 auto;max-width:36rem}
+.bereich-kurz .karte{text-align:left}
+.person__txt{text-align:left}
+.kurz{display:flex;flex-direction:column;gap:0;padding:1.7rem 1.6rem 3rem;position:relative}
+.kurz h3{margin:0 0 .6rem;line-height:1.15}
+.kurz__stich{color:var(--mid);font-size:.97rem;margin:0;line-height:1.55}
+.bereich-kurz .bkopf{max-width:720px;margin:0 auto 2.2rem;text-align:center}
+.ein-cta{margin-top:2rem;text-align:center}
+details.mehr{border-top:1px solid var(--linie);margin-top:1rem;padding-top:.8rem}
+details.mehr>summary{cursor:pointer;list-style:none;font-weight:600;font-size:.92rem;color:var(--akzent);display:flex;align-items:center;gap:.5rem}
+details.mehr>summary::-webkit-details-marker{display:none}
+details.mehr>summary::after{content:'+';font-size:1.1rem;line-height:1}
+details.mehr[open]>summary::after{content:'–'}
+details.mehr .inhalt{padding-top:.9rem}
+details.mehr li{font-size:.95rem;color:var(--mid);padding:.25rem 0 .25rem 1rem;position:relative}
+details.mehr li::before{content:'';position:absolute;left:0;top:.8em;width:5px;height:5px;border-radius:50%;background:var(--akzent)}
+.themen-gruppe{display:grid;gap:.8rem;max-width:860px}
+.themen-gruppe details{background:#fff;border:1.5px solid var(--linie);border-radius:16px;padding:1rem 1.3rem;margin:0}
+.warm .themen-gruppe details{background:var(--bg)}
+.themen-gruppe summary{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.1rem;color:var(--ink)}
+.themen-gruppe .pillen{display:flex;flex-wrap:wrap;gap:.5rem;padding-top:.9rem}
+.themen-gruppe .pillen a{font-size:.9rem;border:1.5px solid var(--linie);border-radius:999px;padding:.4rem .9rem;text-decoration:none;color:var(--ink)}
+.themen-gruppe .pillen a:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+.karten--vier{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:900px){.karten--vier{grid-template-columns:1fr}}
+
+/* ── Eingabefelder im Bestellteil: weiss, gerundet ─────── */
+#frage-stellen .form-group input,
+#frage-stellen .form-group textarea,
+#frage-stellen .form-group select{
+  background:#fff;border:1.5px solid var(--linie);border-radius:14px;
+  padding:.85rem 1rem;font-family:inherit;font-size:1rem;color:var(--ink);width:100%}
+#frage-stellen .form-group textarea{border-radius:18px;min-height:9rem;resize:vertical}
+#frage-stellen .form-group input:focus,
+#frage-stellen .form-group textarea:focus{outline:none;border-color:var(--akzent);
+  box-shadow:0 0 0 3px rgba(78,115,96,.15)}
+#frage-stellen .form-group label{font-weight:600;font-size:.9rem;margin-bottom:.4rem;display:block}
+#frage-stellen .kiosk-option{background:#fff;border:1.5px solid var(--linie);border-radius:16px}
+
+.contact-info h2 { margin-bottom: 1rem; }
+.contact-info p { margin-bottom: 1.5rem; }
+.contact-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-mid);
+}
+.contact-detail__icon {
+  width: 1.75rem; height: 1.75rem;
+  background: var(--sand-warm);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--petrol-mid);
+}
+/* ── Werdegang als Zeitstrahl ────────────────────────────── */
+.cv-timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+  gap: 3.5rem;
+  margin-top: 3rem;
+}
+.cv-track__title {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--copper-text);
+  margin-bottom: 1.5rem;
+}
+.cv-line {
+  list-style: none;
+  position: relative;
+  padding-left: 1.75rem;
+}
+.cv-line::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 0.55rem;
+  bottom: 0.55rem;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--copper) 0%, var(--sand-dark) 100%);
+}
+.cv-line li {
+  position: relative;
+  padding-bottom: 1.6rem;
+}
+.cv-line li:last-child { padding-bottom: 0; }
+.cv-line li::before {
+  content: '';
+  position: absolute;
+  left: -1.75rem;
+  top: 0.5rem;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--sand-warm);
+  border: 2px solid var(--copper);
+}
+.cv-line li:first-child::before { background: var(--copper); }
+.cv-line__year {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--petrol-mid);
+  margin-bottom: 0.2rem;
+}
+.cv-line__text {
+  display: block;
+  font-size: 0.97rem;
+  line-height: 1.6;
+  color: var(--text-dark);
+}
+.group-card__text,
+.offer-card__text,
+.process-step__content p,
+.path-card__text,
+.phase-card__text,
+.path-tile__text,
+.cv-text,
+.angebot-link__desc,
+.pillar__text,
+.pillar__themes,
+.contact-detail { font-size: 0.98rem; }
+.cv-line__text { font-size: 1.03rem; }
+/* ── Fragenkiosk-Pakete ─────────────────────────────────── */
+.frage-pakete {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+  max-width: 460px;
+}
+.frage-paket {
+  background: var(--sand);
+  border: 2px solid var(--copper);
+  border-radius: var(--radius-sm);
+  padding: 0.9rem 0.6rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.frage-paket--mitte { background: var(--sand-warm); }
+.frage-paket__menge {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--petrol-deep);
+}
+.frage-paket__preis {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--copper-text);
+}
+.frage-paket__zusatz {
+  font-size: 0.72rem;
+  color: var(--text-mid);
+}
+  .frage-pakete { grid-template-columns: 1fr; max-width: 260px; }
+.kiosk-option {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: var(--transition);
+}
+.kiosk-option input {
+  position: absolute;
+  opacity: 0;
+  width: 1px; height: 1px;
+}
+.kiosk-option__menge {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--petrol-deep);
+}
+.kiosk-option__preis { font-size: 1.05rem; color: var(--copper-text); }
+.kiosk-option__zusatz { font-size: 0.78rem; color: var(--text-light); }
+.kiosk-option:hover { border-color: var(--copper); }
+.kiosk-option:has(input:checked) {
+  border-color: var(--copper);
+  box-shadow: inset 0 0 0 1px var(--copper);
+  background: var(--sand-warm);
+}
+.kiosk-option:has(input:focus-visible) { outline: 2px solid var(--petrol-mid); outline-offset: 2px; }
+.kiosk-danke {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+.kiosk-danke h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--petrol-deep);
+  margin-bottom: 0.5rem;
+}
+.kiosk-danke > p { color: var(--text-mid); margin-bottom: 1.5rem; }
+.kiosk-danke__note {
+  margin-top: 1.25rem;
+  font-size: 0.82rem;
+  color: var(--text-light);
+}
+/* ── Fragenkiosk: anklickbare Preiskarten ────────────────── */
+a.frage-paket {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+}
+a.frage-paket:hover,
+a.frage-paket:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(148, 99, 60, 0.18);
+}
+.frage-paket__wahl {
+  margin-top: 0.45rem;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--copper-text);
+}
+
+.zitat{margin:1.4rem 0 1.8rem;padding-left:1.4rem;border-left:3px solid var(--akzent)}
+.zitat blockquote{margin:0;font-family:'Source Serif 4',Georgia,serif;font-size:1.2rem;line-height:1.5;color:var(--ink)}
+.zitat figcaption{margin-top:.5rem;font-size:.85rem;color:var(--hell)}
+.einleitung h2{font-size:clamp(1.8rem,4.4vw,2.6rem);margin-top:0}
+.einleitung h3{font-size:1.15rem;margin:1.8rem 0 .4rem}
+.karte.preis{text-align:left}
+.runde__preis{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.6rem;color:var(--akzent);margin:.2rem 0}
+.runde__art{color:var(--mid);margin:0;font-size:.95rem}
+.runden__note{max-width:46rem;margin:1.6rem 0 0;font-size:.92rem;color:var(--hell)}
+.knr{font-weight:700;font-size:.78rem;letter-spacing:.14em;color:var(--akzent);margin:0 0 .4rem}
+.kontakt{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(2rem,5vw,3.5rem)}
+.kontakt__liste li{padding:.7rem 0;border-bottom:1px solid var(--linie);color:var(--mid);font-size:.98rem}
+.kontakt__liste span{display:block;font-weight:600;color:var(--ink);font-size:.88rem}
+.cv__raster{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(2rem,5vw,3.5rem)}
+.cv__spalte h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.2rem;margin-bottom:.8rem}
+.cv li{display:grid;grid-template-columns:5.5rem 1fr;gap:.8rem;padding:.75rem 0;border-top:1px solid var(--linie);color:var(--mid);font-size:.98rem}
+.cv__jahr{color:var(--akzent);font-weight:600;font-size:.86rem}
+.kiosk {
+  position: relative;
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: center;
+}
+.kiosk__stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1100 / 1220;
+}
+.kiosk__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 10px;
+}
+.kiosk__lights {
+  position: absolute;
+  top: 8.4%;
+  left: 13.2%;
+  right: 13.2%;
+  height: 22.4%;
+  border-radius: 8px;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  box-shadow: inset 0 0 30px 11px rgba(255, 216, 74, 0.85);
+  opacity: 0.75;
+}
+.kiosk__lights { animation: kioskGlow 1.9s ease-in-out infinite; }
+.kiosk__display {
+  position: absolute;
+  left: 19.4%;
+  right: 19.4%;
+  top: 76.8%;
+  height: 21.5%;
+  background: #FBF5E4;
+  border: 4px solid #E23B1E;
+  border-radius: 9px;
+  box-shadow: inset 0 0 0 3px #EFC246;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1rem;
+}
+.kiosk__display p {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(0.78rem, 2.5vw, 1.08rem);
+  line-height: 1.3;
+  color: #14356B;
+  margin: 0;
+  max-width: none;
+  transition: opacity 0.2s ease;
+}
+.kiosk__btn { margin-top: 1.4rem; }
+.kiosk-form { margin-top: 2rem; }
+.kiosk-form textarea { min-height: 160px; }
+.kiosk-choice { border: 0; padding: 0; margin: 1.5rem 0; }
+.kiosk-choice legend {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--petrol-deep);
+  margin-bottom: 0.85rem;
+  padding: 0;
+}
+.kiosk-choice__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.85rem;
+}
+.kiosk-option {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: var(--transition);
+}
+.kiosk-option input {
+  position: absolute;
+  opacity: 0;
+  width: 1px; height: 1px;
+}
+.kiosk-option__menge {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--petrol-deep);
+}
+.kiosk-option__preis { font-size: 1.05rem; color: var(--copper-text); }
+.kiosk-option__zusatz { font-size: 0.78rem; color: var(--text-light); }
+.kiosk-option:hover { border-color: var(--copper); }
+.kiosk-option:has(input:checked) {
+  border-color: var(--copper);
+  box-shadow: inset 0 0 0 1px var(--copper);
+  background: var(--sand-warm);
+}
+.kiosk-option:has(input:focus-visible) { outline: 2px solid var(--petrol-mid); outline-offset: 2px; }
+.kiosk-form__note {
+  margin-top: 1rem;
+  font-size: 0.86rem;
+  color: var(--text-light);
+}
+.kiosk-danke {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+.kiosk-danke h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--petrol-deep);
+  margin-bottom: 0.5rem;
+}
+.kiosk-danke > p { color: var(--text-mid); margin-bottom: 1.5rem; }
+.kiosk-danke__note {
+  margin-top: 1.25rem;
+  font-size: 0.82rem;
+  color: var(--text-light);
+}
+form.form {
+  background: var(--warm);
+  border-radius: var(--radius-md);
+  padding: 2.5rem;
+  border: 1px solid var(--linie);
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.form-group {
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+.form-group label {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text-dark);
+  margin-bottom: 0.4rem;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.75rem 1rem;
+  border: 1.5px solid var(--sand-dark);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  background: var(--white);
+  transition: border-color var(--transition);
+  outline: none;
+  appearance: none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--petrol-mid);
+  outline: 2px solid var(--copper);
+  outline-offset: 1px;
+}
+.form-group textarea { min-height: 120px; resize: vertical; }
+.form-group select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%233D5050' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+.form-row { grid-template-columns: 1fr; }
+form.form { padding: 1.5rem; }
+.form-group--hervor select {
+  border-color: var(--copper);
+  box-shadow: 0 0 0 3px rgba(181, 130, 90, 0.18);
+}
+.form-group input,
+.form-group select,
+.form-group textarea { font-size: 1rem; }
+.form__title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--petrol-deep);
+  margin-bottom: 1.5rem;
+}
+.form__privacy {
+  font-size: 0.78rem;
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+.form__privacy a { color: var(--petrol-mid); text-decoration: underline; }
+.form__success {
+  display: none;
+  text-align: center;
+  padding: var(--space-md);
+  color: var(--petrol-mid);
+  font-size: 0.95rem;
+}
+.form__error {
+  margin-top: 0.9rem;
+  padding: 0.8rem 1rem;
+  background: #FBEFE9;
+  border-left: 3px solid #C2492E;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  color: var(--text-dark);
+}
+.form__error a { color: var(--copper-text); font-weight: 600; text-decoration: underline; }
+
+.seitenkopf{padding:9rem 0 2.5rem}
+.seitenkopf h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.035em;
+ font-size:clamp(2.6rem,8vw,5rem);line-height:.98;margin:0 0 .4rem}
+.seitenkopf .nav{position:absolute}
+.seitenkopf__zeile{margin:0 0 .6rem}
+.einleitung{margin-left:0}
+.einleitung p{font-size:1.03rem;line-height:1.75;color:var(--mid)}
+.einleitung__lead{font-family:'Source Serif 4',Georgia,serif;font-size:1.3rem!important;color:var(--ink)!important;line-height:1.5}
+.textlink{color:var(--akzent);border-bottom:1.5px solid var(--akzent);text-decoration:none}
+.wald{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(2rem,5vw,4rem);align-items:start}
+.wald__bild{border-radius:26px;aspect-ratio:3/4;position:sticky;top:2rem}
+.wald p{color:var(--mid)}
+.zitat{margin:1.4rem 0 0;padding-left:1.4rem;border-left:3px solid var(--akzent)}
+.zitat blockquote{margin:0;font-family:'Source Serif 4',Georgia,serif;font-size:1.02rem;line-height:1.6;color:var(--ink)}
+.zitat figcaption{margin-top:.5rem;font-size:.85rem;color:var(--hell)}
+@media(max-width:820px){.wald{grid-template-columns:1fr}.wald__bild{position:static;max-width:420px}}
+.runde__art{color:var(--mid);margin:0 0 .4rem}
+.runde__zeit{font-size:.9rem;color:var(--hell);margin:0 0 .3rem}
+.runde__preis{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.5rem;color:var(--akzent);margin:0}
+.runden__note{max-width:46rem;margin:1.8rem 0 0;font-size:.92rem;color:var(--hell)}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width:600px){}
+
+/* ── Handy-Menü ── */
+.hm-knopf{display:none;background:none;border:0;padding:.35rem;margin:-.35rem;cursor:pointer;border-radius:50%;line-height:0;position:relative;z-index:61}
+.hm-knopf img{width:38px;height:38px;transition:transform .4s ease}
+.hm-knopf[aria-expanded="true"] img{transform:rotate(90deg) scale(1.08)}
+.hm-knopf:focus-visible{outline:2px solid var(--akzent);outline-offset:3px}
+@media(max-width:860px){.hm-knopf{display:block}}
+.hm-panel{position:fixed;inset:0;z-index:60;background:var(--bg);display:flex;flex-direction:column;
+padding:calc(1.5rem + env(safe-area-inset-top,0px)) 1.5rem calc(2rem + env(safe-area-inset-bottom,0px));overflow-y:auto;
+opacity:0;visibility:hidden;transition:opacity .25s ease,visibility 0s linear .25s}
+.hm-panel.offen{opacity:1;visibility:visible;transition:opacity .25s ease}
+.hm-kopf{display:flex;align-items:center;justify-content:space-between;min-height:46px}
+.hm-kopf img.hm-logo{height:34px;width:auto}
+.hm-liste{list-style:none;margin:2.2rem 0 0;padding:0;display:flex;flex-direction:column}
+.hm-liste a{display:block;padding:.75rem 0;border-bottom:1px solid var(--linie);text-decoration:none;color:var(--ink);
+font-weight:700;font-size:1.55rem;letter-spacing:-.02em;line-height:1.2}
+.hm-liste a[aria-current="page"]{color:var(--akzent)}
+.hm-liste li{opacity:0;transform:translateY(8px);transition:opacity .3s ease,transform .3s ease}
+.hm-panel.offen .hm-liste li{opacity:1;transform:none}
+.hm-panel.offen .hm-liste li:nth-child(2){transition-delay:.03s}.hm-panel.offen .hm-liste li:nth-child(3){transition-delay:.06s}
+.hm-panel.offen .hm-liste li:nth-child(4){transition-delay:.09s}.hm-panel.offen .hm-liste li:nth-child(5){transition-delay:.12s}
+.hm-panel.offen .hm-liste li:nth-child(6){transition-delay:.15s}.hm-panel.offen .hm-liste li:nth-child(7){transition-delay:.18s}.hm-panel.offen .hm-liste li:nth-child(8){transition-delay:.21s}
+.hm-unten{margin-top:auto;padding-top:2rem;display:flex;flex-direction:column;gap:1rem}
+.hm-unten .btn{text-align:center}
+.hm-unten p{margin:0;font-family:'Source Serif 4',Georgia,serif;font-style:italic;color:var(--mid)}
+body.hm-zu{overflow:hidden}
+@media(prefers-reduced-motion:reduce){.hm-panel,.hm-liste li,.hm-knopf img{transition:none}}
+.fokus-text{max-width:760px;margin-top:1.6rem;color:var(--mid)}.fokus-text ul{margin:.4rem 0 1rem}.fokus-text li{padding:.35rem 0 .35rem 1rem;position:relative}.fokus-text li::before{content:"";position:absolute;left:0;top:.95em;width:5px;height:5px;border-radius:50%;background:var(--akzent)}.fokus-text b{color:var(--ink)}.karte__text{color:var(--mid);font-size:.97rem;line-height:1.6;margin:0 0 .4rem}.supervision__text{color:var(--mid);max-width:40rem;margin:.4rem 0 0}
+.kern{margin:1.3rem 0 1.5rem;border-left:3px solid var(--akzent);padding-left:1.1rem}.kern p{font-family:'Source Serif 4',Georgia,serif;font-size:1.3rem;line-height:1.45;color:var(--ink)!important;margin:0 0 .3rem}.wald h2{font-size:clamp(1.8rem,4.4vw,2.8rem);line-height:1.08}
+.fuss__mail{margin:0 0 .5rem}.fuss__mail a{color:#fff;text-decoration:underline;text-decoration-color:rgba(255,255,255,.35);text-underline-offset:3px}.fuss__mail a:hover{color:#F0A32E;text-decoration-color:#F0A32E}.inhalt .forschung{font-size:.92rem;border-top:1px solid var(--linie);padding-top:.9rem;margin-top:1rem}</style></head><body>
+<header class="seitenkopf"><nav class="nav"><div class="wrap nav__in">
+<a href="/"><img src="/assets/logo.png" alt="ide Chraft" class="nav__logo"></a>
+<ul><li><a href="/wegbegleitung">Wegbegleitung</a></li><li><a href="/fachbegleitung">Organisationen &amp; Teams</a></li><li><a href="/jugendcoaching">Jugendcoaching</a></li><li><a href="/fragen">Fragenkiosk</a></li><li><a href="/ueber-mich">Über mich</a></li><li><a href="/kontakt#anfrage-erstgespraech" class="nav__cta">Erstgespräch</a></li></ul><button class="hm-knopf" type="button" aria-expanded="false" aria-controls="handymenu" aria-label="Menü öffnen"><img src="/assets/sonne.png" alt=""></button></div></nav>
+<div class="wrap"><p class="eyebrow seitenkopf__zeile">Für dich persönlich · eins zu eins auf Augenhöhe · im Wald</p><h1>Wegbegleitung</h1></div></header><section class="abschnitt" style="padding-top:0;padding-bottom:clamp(2.5rem,6vw,4rem)"><div class="wrap"><div class="schmal einleitung"><p class="eyebrow" style="margin:0 0 .8rem">Systemisches Coaching und Wegbegleitung im Wald</p><p class="einleitung__lead">Mit ide Chraft begleite ich Menschen dabei, innezuhalten, Klarheit zu gewinnen und ihren eigenen nächsten Schritt zu finden.</p>
+<p>Meistens hast du alles im Griff. Manchmal ist es hilfreich, einen anderen Blick auf die Situation zu bekommen.</p>
+<p>Vielleicht weisst du bereits, was dir guttun würde, und landest trotzdem wieder in alten Mustern. Oder du sagst noch zu oft Ja, wenn du eigentlich Nein meinst. Manchmal merkst du am Abend, dass du den ganzen Tag funktioniert, dich selbst aber kaum gespürt und deinen Atem ausser Acht gelassen hast.</p>
+<p>Oder es beschäftigt dich etwas ganz anderes.</p>
+<details class="mehr"><summary>Wie ich dabei vorgehe</summary><div class="inhalt">
+<p>Ich gehe nicht davon aus, dass ich besser weiss, was für dich richtig ist. Mich interessiert, was bei dir bereits funktioniert, wo etwas feststeckt und was sich verändern darf. Manchmal braucht es eine neue Perspektive, manchmal eine konkrete Übung – und manchmal einfach einen Ort, an dem man die Dinge laut aussprechen kann. Mehr über meine Haltung und meinen Werdegang erfährst du <a href="/ueber-mich" class="textlink">auf der Seite Über mich</a>.</p>
+<p>Auch wenn dein Thema in kein Angebot passt, kannst du dich für eine Einzelsitzung melden. Den Schwerpunkt gibst du vor.</p>
+</div></details></div></div></section><section class="abschnitt warm"><div class="wrap">
+<div class="bkopf"><p class="begegnung">Ich begegne dir dort, wo du gerade stehst.<br>Und wir schauen gemeinsam, was für dich zentral ist.</p>
+<p style="margin:0"><a href="/kontakt#anfrage-erstgespraech" class="standort">Erstkontakt und Standortbestimmung →</a></p>
+<p class="eyebrow arbeitsweisen">Mögliche Arbeitsweisen</p></div>
+<div class="karten"><article class="karte"><h3>Selbstsabotage überwinden</h3><p class="karte__text">Du weisst, was dir guttun würde, und landest trotzdem wieder im alten Muster. Wir schauen, was darunter liegt, welche Glaubenssätze dahinterstehen, woher sie kommen und was du stattdessen ausprobieren kannst.</p>
+<details class="mehr"><summary>Mehr dazu</summary><div class="inhalt"><ul><li>Alte Glaubenssätze überschreiben und erlerntes Sein aufdecken</li><li>Schwächende Verhaltensmuster ersetzen</li><li>Negative Gedankenmuster wandeln</li><li>Eigenverantwortung übernehmen</li><li>Den eigenen Raum ausfüllen und selbstfürsorgliche Grenzen setzen</li></ul></div></details>
+<span class="form">Coaching</span></article><article class="karte"><h3>Den inneren Weg gehen</h3><p class="karte__text">Auf deinem inneren Weg geht es um die inwendige Beziehung mit dir selbst. Im Zentrum stehen: sich selbst·vertrauen, sich selbst·bewusst sein, innere Freundschaft, inneres Mentoring, Eigenverantwortung übernehmen und eine Ausrichtung finden.</p>
+<details class="mehr"><summary>Mehr dazu</summary><div class="inhalt"><ul><li>Sich selbst vertrauen lernen</li><li>Sich selbst bewusst werden</li><li>Innere Freundschaft aufbauen</li><li>Inneres Mentoring kennenlernen</li><li>Sich selbst führen lernen und selbstbestimmt leben</li><li>Persönliche und philosophische Fragen</li></ul></div></details>
+<span class="form">Beratung</span></article><article class="karte"><h3>Körperzentriertes Training</h3><p class="karte__text">Dein Denker kann nicht alles übernehmen und braucht auch angeordnete Pausen. Wir nutzen die Weisheit des Körpers, um Unterstützung auf dem inneren Weg zu erhalten. Mit Atem, Wahrnehmung und einfachen Übungen lernst du, dein Nervensystem zu beruhigen und bei dir zu bleiben, gerade auch draussen im Wald.</p>
+<details class="mehr"><summary>Mehr dazu</summary><div class="inhalt"><ul><li>Nervensystemtraining</li><li>Breathwork</li><li>Innere-Kind-Arbeit</li><li>Im Körper bleiben und fühlen</li><li>Wahrnehmungsübungen</li><li class="weitere">weitere: Meditation, Herzarbeit, Verwurzelung</li></ul></div></details>
+<span class="form">Training</span></article></div>
+<div class="richtung-blk"><p class="eyebrow">Wohin es gehen kann</p><div class="richtung"><span>innere Freundschaft</span><span>Selbstvertrauen</span><span>Selbstführung</span><span>klare Grenzen</span><span>selbstbestimmt handeln</span></div></div>
+</div></section><section class="abschnitt" id="wald"><div class="wrap"><div class="wald">
+<div><p class="eyebrow">Systemisches Coaching</p><h2>Wegbegleitung im Wald</h2><div class="kern"><p>Wir sind mit einem Thema unterwegs.</p><p>Ich gehe mit dir mit –</p><p>und mit den Dingen, die da sind.</p></div>
+<p>Wir nutzen die Bewegung des Körpers, um auch innere Prozesse in Bewegung zu bringen – und den Ausgleich, die Gelassenheit und die Kraft des Waldes. Unterwegs in der Natur begleite ich dich ein Stück auf deinem Weg.</p>
+<p>Mir ist eine ungezwungene Atmosphäre wichtig, damit echte Begegnung möglich wird. In Bewegung lässt es sich leichter mit den Dingen mitgehen – und das Nervensystem gleicht sich in der Natur gleich mit aus.</p>
+<details class="mehr"><summary>Mehr dazu</summary><div class="inhalt">
+<p>Auch im Wald gründet das Coaching auf Professionalität: Begegnung auf Augenhöhe, Herzlichkeit und Humor stehen im Fokus. Probier&#39;s us, wenn&#39;s di gwunderet – und sonst stelle ich beim nächsten Mal einen Raum zur Verfügung.</p>
+<figure class="zitat"><blockquote>«Dreissig Speichen umgeben eine Radnabe, doch der Wagen wird erst brauchbar durch das, was da nicht ist. Lehm wird mit Wasser gemischt, doch die Brauchbarkeit eines Gefässes hängt von seiner Leere ab. Fenster und Türen werden eingebaut, doch es ist die Leere, die einen Raum bewohnbar macht.»</blockquote>
+<figcaption>Laotse, Tao Te King</figcaption></figure></div></details><details class="mehr"><summary>Wie die Natur Teil des Prozesses werden kann</summary><div class="inhalt"><p>Ich gehe nicht mit einer fertigen Übung in den Wald. Wir schauen, was gerade da ist. Bewegung, Umgebung und Natur können dabei zu einem Resonanzraum werden und neue Perspektiven ermöglichen. Ein Weg, eine Grenze oder ein Gegenstand kann plötzlich etwas sichtbar machen, das vorher nur im Kopf war. Manchmal hilft auch eine Weggabelung, eine Entscheidung sichtbar zu machen.</p><p>Wir nutzen unterwegs in der Natur, was bereits da ist und was sie uns sowieso gibt. Der Wald hilft dabei, unser Nervensystem zu regulieren und herunterzufahren. Frische Luft, Wind, Regen oder Sonne gleichen uns aus und ermöglichen weitere Perspektiven.</p><p class="forschung">Erste Forschung zu Gesprächen und Interventionen im Gehen deutet darauf hin, dass Bewegung offenes Denken fördern und das psychische Wohlbefinden unterstützen kann. Auch natürliche Umgebungen werden mit Erholung, Aufmerksamkeit und geringerem Stresserleben in Verbindung gebracht. Die Forschung speziell zu Coaching im Wald ist noch jung – die Verbindung von Gespräch, Bewegung und Natur ist jedoch ein spannendes Feld.</p></div></details></div>
+<div class="foto wald__bild"><img src="/assets/waldstrasse-gruen.jpg" alt="Sonniger Waldweg im Grünen – Ort für Coaching im Wald"></div>
+</div></div></section><section class="abschnitt warm"><div class="wrap">
+<div class="bkopf"><p class="eyebrow">Mögliche Themen einer Einzelsitzung</p>
+<p class="lead">Fünf Bereiche – klick einen auf, wenn du Konkretes suchst.</p></div>
+<div class="themen-gruppe"><details><summary>Grenzen &amp; Beziehungen</summary><div class="pillen"><a href="/kontakt?thema=Gesunde%20%26%20klare%20Grenzen%20setzen#anfrage">Gesunde &amp; klare Grenzen setzen</a><a href="/kontakt?thema=Arbeit%20mit%20dem%20Dramadreieck#anfrage">Arbeit mit dem Dramadreieck</a><a href="/kontakt?thema=Beziehungsthemen#anfrage">Beziehungsthemen</a></div></details><details><summary>Muster &amp; Selbstsabotage</summary><div class="pillen"><a href="/kontakt?thema=Selbstsabotage%20%C3%BCberwinden#anfrage">Selbstsabotage überwinden</a><a href="/kontakt?thema=Erlerntes%20Verhalten%20erkennen#anfrage">Erlerntes Verhalten erkennen</a><a href="/kontakt?thema=Alte%20Glaubensmuster%20wandeln#anfrage">Alte Glaubensmuster wandeln</a></div></details><details><summary>Stress, Nervensystem &amp; Körper</summary><div class="pillen"><a href="/kontakt?thema=Nervensystem-Regulation#anfrage">Nervensystem-Regulation</a><a href="/kontakt?thema=Breathwork#anfrage">Breathwork</a><a href="/kontakt?thema=Unangenehme%20innere%20Zust%C3%A4nde%20integrieren#anfrage">Unangenehme innere Zustände integrieren</a><a href="/kontakt?thema=Innere-Kind-Arbeit#anfrage">Innere-Kind-Arbeit</a></div></details><details><summary>Gewohnheiten &amp; Impulse</summary><div class="pillen"><a href="/kontakt?thema=Impulskontrolle#anfrage">Impulskontrolle</a><a href="/kontakt?thema=Kraftvolle%20Gewohnheiten%20aufbauen#anfrage">Kraftvolle Gewohnheiten aufbauen</a></div></details><details><summary>Orientierung &amp; persönliche Fragen</summary><div class="pillen"><a href="/kontakt?thema=Orientierung%20und%20Entscheidungen#anfrage">Orientierung und Entscheidungen</a><a href="/kontakt?thema=Pers%C3%B6nliche%20und%20philosophische%20Fragen#anfrage">Persönliche und philosophische Fragen</a></div></details></div></div></section><section class="abschnitt"><div class="wrap">
+<div class="bkopf"><p class="eyebrow">Weitere Fokus-Begleitungen</p></div>
+<div class="fokus-liste"><a class="fokus__kachel" href="/kontakt?thema=Rauchfrei%20ide%20Chraft#anfrage"><h3>RAUCHFREI</h3><p class="fokus__klein">in der Kraft</p></a><a class="fokus__kachel" href="/kontakt?thema=Im%20K%C3%B6rper%20ide%20Chraft#anfrage"><h3>IM KÖRPER</h3><p class="fokus__klein">in der Kraft</p></a><a class="fokus__kachel" href="/kontakt?thema=Bildschirmfrei%20ide%20Chraft#anfrage"><h3>BILDSCHIRMFREI</h3><p class="fokus__klein">in der Kraft</p></a></div><div class="fokus-text"><p>Eine Fokus-Begleitung ist ein Weg mit einem klaren Ziel.</p><ul><li><b>Rauchfrei</b> – volls Volume statt Röchle: Wir stellen uns dieser Gewohnheit und stärken, was sie bisher ersetzt hat.</li><li><b>Im Körper</b> – zuhause in dir statt auf der Suche im Aussen: über Atem und Wahrnehmung zurück zu dir.</li><li><b>Bildschirmfrei</b> – weniger Bildschirm, meh Rägeschirm: weniger Scrollen, mehr echtes Erleben.</li></ul><p>Gerne draussen und in Bewegung im Wald.</p></div></div></section><section class="abschnitt warm"><div class="wrap">
+<div class="bkopf"><h2>Welche Runde passt gerade?</h2>
+<p class="lead">Ich rechne in Runden – ob wir dabei im Wald unterwegs sind, in einem Raum sitzen oder online sprechen.</p></div>
+<div class="karten"><a class="karte runde" href="/kontakt?runde=Kleine%20Runde#anfrage"><h3>Kleine Runde</h3><p class="runde__art">kurze Begleitung</p><p class="runde__zeit">30 Min.</p><p class="runde__preis">CHF 75.–</p><span class="weiter">Anfragen →</span></a><a class="karte runde" href="/kontakt?runde=Mittlere%20Runde#anfrage"><h3>Mittlere Runde</h3><p class="runde__art">Wegbegleitung</p><p class="runde__zeit">60 Min.</p><p class="runde__preis">CHF 130.–</p><span class="weiter">Anfragen →</span></a><a class="karte runde" href="/kontakt?runde=Grosse%20Runde#anfrage"><h3>Grosse Runde</h3><p class="runde__art">vertiefte Wegbegleitung</p><p class="runde__zeit">90–120 Min.</p><p class="runde__preis">CHF 200.–</p><span class="weiter">Anfragen →</span></a></div>
+<p class="runden__note">Das Erstgespräch ist kostenlos. Meine Begleitung ist privat und wird selbst bezahlt – sie läuft nicht über die Krankenkasse. Für regelmässige Begleitungen, Jugendliche oder besondere Situationen finden wir eine faire Lösung.</p>
+</div></section><section class="abschnitt einstieg-sec "><div class="wrap schmal"><div class="einstieg-panel">
+<span class="einstieg-marke">Leichter Einstieg</span>
+<h2>Lieber mit einem ersten kleinen Schritt beginnen?</h2>
+<h3 class="einstieg-zweit">Eine Frage für deine Situation</h3>
+<p class="einstieg-text">Eine passende Frage kann bereits etwas in dir in Bewegung bringen. Du schilderst mir kurz deine Situation und erhältst eine persönlich für dich formulierte und handgeschriebene Frage.</p>
+<a href="/fragen#frage-stellen" class="einstieg"><span>Persönlich formulierte Frage mit kurzem Kontext</span><b>CHF 8.–</b></a>
+<p style="margin-top:1.1rem"><a href="/fragen" class="btn btn--l">Zum kostenlosen Fragenkiosk</a></p>
+<h3 class="einstieg-zweit">Perspektivenwechsel</h3>
+<p class="einstieg-text">Du schilderst mir deine Situation. Ich höre zu und sende dir eine Sprachnachricht mit anderen Blickwinkeln. Unverbindlich und ohne Termin.</p>
+<a href="/fragen#perspektivenwechsel" class="einstieg"><span>Deine Situation, meine Sprachnachricht mit anderen Blickwinkeln</span><b>CHF 30.–</b></a>
+</div></div></section><section class="abschnitt abschluss"><div class="wrap"><div class="abschluss__in">
+<div class="foto rund"><img src="/assets/portrait.jpg" alt="Valentin Lerchi, Sozialarbeiter FH und Coach in Winterthur">
+<span>Valentin Lerchi · ide Chraft</span></div>
+<div><h2>Lernen wir uns kennen</h2>
+<p class="lead">Wir schauen gemeinsam, ob eine Wegbegleitung stimmig ist. Unverbindlich und kostenlos.</p>
+<a href="/kontakt#anfrage-erstgespraech" class="btn">Zum kostenlosen Erstgespräch</a></div>
+</div></div></section><div class="hm-panel" id="handymenu" role="dialog" aria-modal="true" aria-label="Menü"><div class="hm-kopf"><a href="/"><img src="/assets/logo.png" alt="ide Chraft Startseite" class="hm-logo"></a><button class="hm-knopf hm-schliessen" type="button" aria-label="Menü schliessen" style="display:block"><img src="/assets/sonne.png" alt=""></button></div><ul class="hm-liste"><li><a href="/">Start</a></li><li><a href="/wegbegleitung">Wegbegleitung</a></li><li><a href="/fachbegleitung">Organisationen &amp; Teams</a></li><li><a href="/jugendcoaching">Jugendcoaching</a></li><li><a href="/fragen">Fragenkiosk</a></li><li><a href="/ueber-mich">Über mich</a></li><li><a href="/kontakt">Kontakt</a></li></ul><div class="hm-unten"><a href="/kontakt#anfrage-erstgespraech" class="btn">Kostenloses Erstgespräch</a><p>Weil du es wert bist.</p></div></div>
+<footer><div class="wrap fuss">
+<div class="fuss__marke">
+<img src="/assets/logo-white.png" alt="ide Chraft" class="fuss__logo">
+<p class="fuss__zeile">Coaching · Beratung · Training · Winterthur</p><p class="fuss__mail"><a href="mailto:kontakt@idechraft.ch">kontakt@idechraft.ch</a></p>
+<p class="fuss__slogan">Weil du es wert bist.</p></div>
+<nav class="fuss__spalte" aria-label="Angebote"><p class="fuss__titel">Angebote</p><a href="/wegbegleitung">Wegbegleitung</a><a href="/fachbegleitung">Organisationen &amp; Teams</a><a href="/jugendcoaching">Jugendcoaching</a><a href="/fragen">Fragenkiosk</a></nav>
+<nav class="fuss__spalte" aria-label="Informationen"><p class="fuss__titel">Informationen</p><a href="/ueber-mich">Über mich</a><a href="/kontakt">Kontakt</a><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a></nav>
+</div>
+<div class="wrap fuss__unten"><p>Von Valentin mit Herz</p></div></footer>
+<script>var h=document.querySelector('.hero');function f(){if(h)h.classList.add('fertig')}
+document.addEventListener('click',f);window.addEventListener('scroll',f,{passive:true});setTimeout(f,11000);</script>
+<script>
+(function(){
+  var knopf=document.querySelector('.hm-knopf'), panel=document.getElementById('handymenu');
+  if(!knopf||!panel) return;
+  var hier=location.pathname.replace(/index\.html$/,'').replace(/\/$/,'');
+  panel.querySelectorAll('.hm-liste a').forEach(function(a){
+    var ziel=new URL(a.href,location.href).pathname.replace(/index\.html$/,'').replace(/\/$/,'');
+    if(ziel===hier) a.setAttribute('aria-current','page');
+  });
+  function setzen(auf){
+    panel.classList.toggle('offen',auf); knopf.setAttribute('aria-expanded',auf);
+    knopf.setAttribute('aria-label',auf?'Menü schliessen':'Menü öffnen');
+    document.body.classList.toggle('hm-zu',auf); panel.inert=!auf;
+    if(auf){var z=panel.querySelector('.hm-liste a'); if(z) z.focus();} else knopf.focus();
+  }
+  panel.inert=true;
+  knopf.addEventListener('click',function(){setzen(!panel.classList.contains('offen'))});
+  panel.querySelector('.hm-schliessen').addEventListener('click',function(){setzen(false)});
+  panel.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setzen(false)})});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&panel.classList.contains('offen')) setzen(false)});
+  matchMedia('(min-width:861px)').addEventListener('change',function(m){if(m.matches&&panel.classList.contains('offen')) setzen(false)});
+})();
+</script>
+</body></html>
