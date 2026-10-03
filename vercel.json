@@ -3,18 +3,118 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/einzelpersonen",
+      "destination": "/wegbegleitung",
+      "permanent": true
+    },
+    {
+      "source": "/coaching",
+      "destination": "/wegbegleitung",
+      "permanent": true
+    },
+    {
+      "source": "/selbstsabotage-ueberwinden",
+      "destination": "/wegbegleitung",
+      "permanent": true
+    },
+    {
+      "source": "/selbstsabotage-%C3%BCberwinden",
+      "destination": "/wegbegleitung",
+      "permanent": true
+    },
+    {
+      "source": "/selbstsabotage-überwinden",
+      "destination": "/wegbegleitung",
+      "permanent": true
+    },
+    {
+      "source": "/fachpersonen",
+      "destination": "/fachbegleitung",
+      "permanent": true
+    },
+    {
+      "source": "/teams",
+      "destination": "/fachbegleitung",
+      "permanent": true
+    },
+    {
+      "source": "/supervision",
+      "destination": "/fachbegleitung",
+      "permanent": true
+    },
+    {
+      "source": "/supervision-teams",
+      "destination": "/fachbegleitung",
+      "permanent": true
+    },
+    {
+      "source": "/organisationen",
+      "destination": "/fachbegleitung",
+      "permanent": true
+    },
+    {
+      "source": "/junge-menschen",
+      "destination": "/jugendcoaching",
+      "permanent": true
+    },
+    {
+      "source": "/jugend",
+      "destination": "/jugendcoaching",
+      "permanent": true
+    },
+    {
+      "source": "/maennerarbeit",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/menswork",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/mannae-ide-chraft",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/maennerkreis",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/angebote",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/fragenkiosk",
+      "destination": "/fragen",
+      "permanent": true
+    },
+    {
+      "source": "/valentin",
+      "destination": "/ueber-mich",
+      "permanent": true
+    },
+    {
+      "source": "/unter-uns",
+      "destination": "/ueber-mich",
+      "permanent": true
+    },
+    {
       "source": "/pages/coaching.html",
-      "destination": "/einzelpersonen",
+      "destination": "/wegbegleitung",
       "permanent": true
     },
     {
       "source": "/pages/jugend.html",
-      "destination": "/junge-menschen",
+      "destination": "/jugendcoaching",
       "permanent": true
     },
     {
       "source": "/pages/supervision.html",
-      "destination": "/teams",
+      "destination": "/fachbegleitung",
       "permanent": true
     },
     {
@@ -24,12 +124,12 @@
     },
     {
       "source": "/pages/maennerarbeit.html",
-      "destination": "/maennerarbeit",
+      "destination": "/",
       "permanent": true
     },
     {
       "source": "/pages/fachpersonen.html",
-      "destination": "/fachpersonen",
+      "destination": "/fachbegleitung",
       "permanent": true
     },
     {
@@ -58,79 +158,29 @@
       "permanent": true
     },
     {
-      "source": "/coaching",
-      "destination": "/einzelpersonen",
-      "permanent": false
-    },
-    {
-      "source": "/supervision",
-      "destination": "/teams",
-      "permanent": false
-    },
-    {
-      "source": "/fragenkiosk",
-      "destination": "/fragen",
-      "permanent": false
-    },
-    {
-      "source": "/valentin",
-      "destination": "/ueber-mich",
+      "source": "/einzelpersonen.html",
+      "destination": "/wegbegleitung",
       "permanent": true
     },
     {
-      "source": "/unter-uns",
-      "destination": "/ueber-mich",
+      "source": "/fachpersonen.html",
+      "destination": "/fachbegleitung",
       "permanent": true
     },
     {
-      "source": "/angebote",
+      "source": "/teams.html",
+      "destination": "/fachbegleitung",
+      "permanent": true
+    },
+    {
+      "source": "/junge-menschen.html",
+      "destination": "/jugendcoaching",
+      "permanent": true
+    },
+    {
+      "source": "/maennerarbeit.html",
       "destination": "/",
       "permanent": true
-    },
-    {
-      "source": "/menswork",
-      "destination": "/maennerarbeit",
-      "permanent": true
-    },
-    {
-      "source": "/selbstsabotage-überwinden",
-      "destination": "/einzelpersonen",
-      "permanent": true
-    },
-    {
-      "source": "/selbstsabotage-%C3%BCberwinden",
-      "destination": "/einzelpersonen",
-      "permanent": true
-    },
-    {
-      "source": "/selbstsabotage-ueberwinden",
-      "destination": "/einzelpersonen",
-      "permanent": true
-    },
-    {
-      "source": "/mannae-ide-chraft",
-      "destination": "/maennerarbeit",
-      "permanent": true
-    },
-    {
-      "source": "/maennerkreis",
-      "destination": "/maennerarbeit",
-      "permanent": true
-    },
-    {
-      "source": "/supervision-teams",
-      "destination": "/teams",
-      "permanent": true
-    },
-    {
-      "source": "/junge-menschen",
-      "destination": "/jugendcoaching",
-      "permanent": true
-    },
-    {
-      "source": "/jugend",
-      "destination": "/jugendcoaching",
-      "permanent": false
     }
   ]
 }
