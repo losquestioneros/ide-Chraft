@@ -1,4 +1,5 @@
-"""Tassen-Motiv "FUHRIE" (E rot durchgestrichen) + kleines "MANN" unter dem E.
+"""Tassen-Motiv "FUHRIE" (E rot durchgestrichen) + kleines "MANN" rechts vom E,
+auf der Linie des untersten E-Strichs.
 
 Erzeugt:
   fuhrie-mann_transparent.png  – zum Hochladen beim Tassen-Druckservice
@@ -27,9 +28,8 @@ FINAL_WIDTH = 3000     # Breite des fertigen Motivs (px)
 MARGIN = 0.06          # Rand rund ums Motiv (Anteil der Breite)
 
 BIG_SIZE = 640 * SS
-SMALL_RATIO = 0.19     # Versalhöhe MANN im Verhältnis zu FUHRIE
-SMALL_TRACK = 0.16     # Laufweite MANN (em)
-GAP_RATIO = 0.24       # Abstand Grundlinie FUHRIE -> Oberkante MANN (x Versalhöhe)
+SMALL_TRACK = 0.12     # Laufweite MANN (em)
+GAP_FACTOR = 1.0       # Abstand E -> MANN (x Lücke zwischen I und E)
 
 
 def marker_stroke(draw, p0, p1, width, seed=7):
@@ -76,13 +76,44 @@ def tracked_width(text, font, track_px):
     return sum(font.getlength(c) for c in text) + track_px * (len(text) - 1)
 
 
+def glyph_mask(font, ch):
+    """Maske eines Buchstabens + Ursprung (Grundlinie links) in der Maske."""
+    size = font.size
+    m = Image.new("L", (size * 2, size * 2), 0)
+    origin = (size // 2, int(size * 1.4))
+    ImageDraw.Draw(m).text(origin, ch, font=font, fill=255, anchor="ls")
+    return m, origin
+
+
+def ink_bbox(font, ch):
+    """Tatsächliche Tinten-Box (l, t, r, b) relativ zum Ursprung auf der Grundlinie."""
+    m, (ox, oy) = glyph_mask(font, ch)
+    l, t, r, b = m.getbbox()
+    return l - ox, t - oy, r - ox, b - oy
+
+
+def bottom_bar_height(font):
+    """Höhe des untersten Querstrichs vom E (in px)."""
+    m, _ = glyph_mask(font, "E")
+    a = np.array(m)
+    l, t, r, b = m.getbbox()
+    col = a[:, r - 6] > 127                   # Spalte ganz rechts im Strich
+    rows = np.nonzero(col)[0]
+    bottom = rows.max()
+    top = bottom
+    while top > 0 and col[top - 1]:
+        top -= 1
+    return bottom - top + 1
+
+
 def build_motif():
     big = ImageFont.truetype(FONT_BIG, BIG_SIZE)
-    cap_h = -big.getbbox("H", anchor="ls")[1]
+    cap_h = -ink_bbox(big, "H")[1]
 
-    small_size = round(BIG_SIZE * SMALL_RATIO)
+    # Dicke des untersten E-Strichs messen -> Versalhöhe von MANN
+    bar_h = bottom_bar_height(big)
+    small_size = round(BIG_SIZE * bar_h / cap_h)
     small = ImageFont.truetype(FONT_SMALL, small_size)
-    small_cap = -small.getbbox("H", anchor="ls")[1]
     small_track = SMALL_TRACK * small_size
 
     W = int(BIG_SIZE * 6)
@@ -95,21 +126,21 @@ def build_motif():
 
     # Lage des E (Tinte)
     ex = ox + big.getlength("FUHRI")
-    el, et, er, eb = big.getbbox("E", anchor="ls")
+    el, et, er, eb = ink_bbox(big, "E")
     e_left, e_right = ex + el, ex + er
     e_top, e_bot = base + et, base + eb
     e_w, e_h = e_right - e_left, e_bot - e_top
 
-    # MANN klein, mittig unter dem E
-    mw = tracked_width("MANN", small, small_track)
-    m_cx = (e_left + e_right) / 2
-    m_base = base + GAP_RATIO * cap_h + small_cap
-    draw_tracked(d, m_cx - mw / 2, m_base, "MANN", small, small_track, BLACK)
+    # Lücke zwischen I und E (Tinte)
+    i_right = ox + big.getlength("FUHR") + ink_bbox(big, "I")[2]
+    gap = e_left - i_right
+
+    # MANN klein, rechts vom E, auf der Grundlinie = unterster E-Strich
+    m_left = e_right + GAP_FACTOR * gap - ink_bbox(small, "M")[0]
+    draw_tracked(d, m_left, base, "MANN", small, small_track, BLACK)
 
     # Roter Strich: von unten links nach oben rechts, nur über das E
     # (Start in der Lücke zwischen I und E, damit das I unberührt bleibt)
-    i_right = ox + big.getlength("FUHR") + big.getbbox("I", anchor="ls")[2]
-    gap = e_left - i_right
     p0 = (e_left - 0.35 * gap, e_bot + 0.02 * e_h)
     p1 = (e_right + 0.16 * e_w, e_top - 0.07 * e_h)
     marker_stroke(d, p0, p1, width=0.042 * cap_h)
