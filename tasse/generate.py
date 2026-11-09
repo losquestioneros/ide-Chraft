@@ -5,6 +5,7 @@ Erzeugt:
   fuhrie-mann_transparent.png  – zum Hochladen beim Tassen-Druckservice
   fuhrie-mann_weiss.png        – gleiches Motiv auf weissem Hintergrund
   vorschau-tasse.png           – grobe Vorschau auf einer Tasse
+  …_babyblau…                  – dasselbe mit babyblauer Schrift
 
 Aufruf:  python3 tasse/generate.py
 """
@@ -21,6 +22,7 @@ FONT_BIG = os.path.join(FONT_DIR, "InterDisplay-Black.otf")
 FONT_SMALL = os.path.join(FONT_DIR, "InterDisplay-Bold.otf")
 
 BLACK = (17, 17, 17, 255)
+BABYBLUE = (126, 186, 232, 255)  # Babyblau, leicht kräftiger für den Druck
 RED = (214, 32, 26, 255)  # Marker-Rot
 
 SS = 3                 # Supersampling
@@ -106,7 +108,7 @@ def bottom_bar_height(font):
     return bottom - top + 1
 
 
-def build_motif():
+def build_motif(color=BLACK):
     big = ImageFont.truetype(FONT_BIG, BIG_SIZE)
     cap_h = -ink_bbox(big, "H")[1]
 
@@ -122,7 +124,7 @@ def build_motif():
     d = ImageDraw.Draw(img)
 
     ox, base = int(BIG_SIZE * 0.6), int(BIG_SIZE * 1.4)
-    d.text((ox, base), "FUHRIE", font=big, fill=BLACK, anchor="ls")
+    d.text((ox, base), "FUHRIE", font=big, fill=color, anchor="ls")
 
     # Lage des E (Tinte)
     ex = ox + big.getlength("FUHRI")
@@ -137,7 +139,7 @@ def build_motif():
 
     # MANN klein, rechts vom E, auf der Grundlinie = unterster E-Strich
     m_left = e_right + GAP_FACTOR * gap - ink_bbox(small, "M")[0]
-    draw_tracked(d, m_left, base, "MANN", small, small_track, BLACK)
+    draw_tracked(d, m_left, base, "MANN", small, small_track, color)
 
     # Roter Strich: von unten links nach oben rechts, nur über das E
     # (Start in der Lücke zwischen I und E, damit das I unberührt bleibt)
@@ -207,12 +209,17 @@ def mug_preview(motif):
     return bg.resize((W // S, H // S), Image.LANCZOS)
 
 
-if __name__ == "__main__":
-    motif = build_motif()
+def export(color, suffix):
+    motif = build_motif(color)
     dpi = (300, 300)
-    motif.save(os.path.join(HERE, "fuhrie-mann_transparent.png"), dpi=dpi)
+    motif.save(os.path.join(HERE, f"fuhrie-mann{suffix}_transparent.png"), dpi=dpi)
     white = Image.new("RGB", motif.size, (255, 255, 255))
     white.paste(motif, (0, 0), motif)
-    white.save(os.path.join(HERE, "fuhrie-mann_weiss.png"), dpi=dpi)
-    mug_preview(motif).save(os.path.join(HERE, "vorschau-tasse.png"))
-    print("Motiv:", motif.size)
+    white.save(os.path.join(HERE, f"fuhrie-mann{suffix}_weiss.png"), dpi=dpi)
+    mug_preview(motif).save(os.path.join(HERE, f"vorschau-tasse{suffix}.png"))
+    print(f"Motiv{suffix or ' (schwarz)'}:", motif.size)
+
+
+if __name__ == "__main__":
+    export(BLACK, "")
+    export(BABYBLUE, "_babyblau")
